@@ -16,8 +16,13 @@
 
 h1 { font-family: 'Patrick Hand', cursive; }
 
+#bio { border-left: 1px solid grey; }
 #bio p {
   font-size: 17px;
+}
+
+#bio-text {
+  padding-top: 15px;
 }
 
 #reading_services h3 {
