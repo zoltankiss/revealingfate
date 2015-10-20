@@ -16,6 +16,10 @@
 
 h1 { font-family: 'Patrick Hand', cursive; }
 
+#bio p {
+  font-size: 17px;
+}
+
 #reading_services h3 {
   font-family: 'Patrick Hand', cursive;
   font-size: 34px;
