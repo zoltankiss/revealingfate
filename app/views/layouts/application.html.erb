@@ -16,6 +16,16 @@
 <body>
 
 <div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/team" <%= raw('class="active"') if request.env['PATH_INFO'] == '/team' %>>Our Team</a></li>
+          <li><a href="/" <%= raw('class="active"') if request.env['PATH_INFO'] == '/' %>>Home</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
   <div class="jumbotron">
     <%= yield %>

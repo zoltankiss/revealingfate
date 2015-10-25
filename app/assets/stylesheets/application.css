@@ -53,3 +53,5 @@ hr {
 }
 
 .smaller { font-size: 25px; }
+
+.active { font-weight: bold; }
