@@ -14,11 +14,11 @@
  *= require_self
  */
 
-h1 { font-family: 'Cinzel', serif; }
+h1 { font-family: 'Cinzel', serif; color: black !important; }
 
-h2 { font-family: 'Economica', sans-serif; }
+h2 { font-family: 'Economica', sans-serif; color: black !important; }
 
-p { color: #0c090a; }
+p { color: #0c090a !important; }
 
 .sidebar { border-left: 1px solid grey; }
 
