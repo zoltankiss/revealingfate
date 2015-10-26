@@ -18,7 +18,10 @@ h1 { font-family: 'Cinzel', serif; }
 
 h2 { font-family: 'Economica', sans-serif; }
 
-#bio { border-left: 1px solid grey; }
+p { color: #0c090a; }
+
+.sidebar { border-left: 1px solid grey; }
+
 #bio p {
   font-size: 17px;
 }
