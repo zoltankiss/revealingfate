@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @info_for_reading.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @info_for_reading.email %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @info_for_reading.birth_date %>
+</p>
+
+<%= link_to 'Edit', edit_info_for_reading_path(@info_for_reading) %> |
+<%= link_to 'Back', info_for_readings_path %>
