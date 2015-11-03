@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :info_for_readings
   root 'pages#home'
   get '/team' => 'pages#team'
   get '/reading_services' => 'pages#reading_services'
