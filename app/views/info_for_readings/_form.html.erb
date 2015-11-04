@@ -21,16 +21,51 @@
   </div>
   <div class="field">
     <%= f.label :birth_date %><br>
-    <%= f.datetime_select :birth_date %>
+    <input type="text" id="birth_date">
+    <%= f.time_select :birth_date %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>
 
+  <% if @package == 'basic' %>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="VWJUNTK5NVPXU">
+    </form>
+  <% elsif @package == 'standard' %>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="25RTKGPPA2WFL">
+    </form>
+  <% elsif @package == 'full' %>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="25RTKGPPA2WFL">
+    </form>
+  <% end %>
+
+  <input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 
   <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $("#birth_date").datepicker();
+  });
+
+  $("#paypal_button").click(function () {
+    $.post(
+      "<%= info_for_readings_path %>",
+      {
+        info_for_reading: {
+          name: $("#info_for_reading_name").val(),
+          email: $('#info_for_reading_email').val(),
+          date: $('#birth_date').val(),
+          hour: $('#info_for_reading_birth_date_4i').val(),
+          minute: $('#info_for_reading_birth_date_5i').val()
+        }
+      }
+    );
+    $('#loading').html('loading...');
+    $("#paypal_form").submit();
   });
   </script>

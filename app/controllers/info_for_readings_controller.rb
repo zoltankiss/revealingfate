@@ -1,6 +1,8 @@
 class InfoForReadingsController < ApplicationController
   before_action :set_info_for_reading, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :verify_authenticity_token
+
   # GET /info_for_readings
   # GET /info_for_readings.json
   def index
@@ -14,6 +16,7 @@ class InfoForReadingsController < ApplicationController
 
   # GET /info_for_readings/new
   def new
+    @package = params[:service]
     @info_for_reading = InfoForReading.new
   end
 
@@ -24,17 +27,16 @@ class InfoForReadingsController < ApplicationController
   # POST /info_for_readings
   # POST /info_for_readings.json
   def create
-    @info_for_reading = InfoForReading.new(info_for_reading_params)
-
-    respond_to do |format|
-      if @info_for_reading.save
-        format.html { redirect_to @info_for_reading, notice: 'Info for reading was successfully created.' }
-        format.json { render :show, status: :created, location: @info_for_reading }
-      else
-        format.html { render :new }
-        format.json { render json: @info_for_reading.errors, status: :unprocessable_entity }
-      end
-    end
+    date = info_for_reading_params[:date].split('/').map(&:to_i)
+    hr = info_for_reading_params[:hour].to_i
+    minute = info_for_reading_params[:minute].to_i
+    birthdate = DateTime.new(date[2], date[0], date[1], hr, minute)
+    @info_for_reading = InfoForReading.new(
+      name: info_for_reading_params[:name],
+      email: info_for_reading_params[:email],
+      birth_date: birthdate
+    )
+    render text: 'success!'
   end
 
   # PATCH/PUT /info_for_readings/1
@@ -69,6 +71,6 @@ class InfoForReadingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_for_reading_params
-      params.require(:info_for_reading).permit(:name, :email, :birth_date)
+      params.require(:info_for_reading).permit(:name, :email, :date, :hour, :minute)
     end
 end

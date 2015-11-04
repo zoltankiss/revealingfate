@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
   root 'pages#home'
   get '/team' => 'pages#team'
   get '/reading_services' => 'pages#reading_services'
   get '/newsletter_signup' => 'pages#newsletter_signup'
   get '/contact_us' => 'pages#contact_us'
+
+  get '/thank_you_for_your_purchase' => 'pages#thank_you_for_your_purchase'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
