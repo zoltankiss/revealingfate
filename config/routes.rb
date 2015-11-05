@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
   root 'pages#home'
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
   get '/contact_us' => 'pages#contact_us'
 
   get '/thank_you_for_your_purchase' => 'pages#thank_you_for_your_purchase'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -6,12 +6,14 @@ class InfoForReadingsController < ApplicationController
   # GET /info_for_readings
   # GET /info_for_readings.json
   def index
+    authenticate_user
     @info_for_readings = InfoForReading.all
   end
 
   # GET /info_for_readings/1
   # GET /info_for_readings/1.json
   def show
+    authenticate_user
   end
 
   # GET /info_for_readings/new
@@ -22,6 +24,7 @@ class InfoForReadingsController < ApplicationController
 
   # GET /info_for_readings/1/edit
   def edit
+    authenticate_user
   end
 
   # POST /info_for_readings
@@ -56,6 +59,7 @@ class InfoForReadingsController < ApplicationController
   # DELETE /info_for_readings/1
   # DELETE /info_for_readings/1.json
   def destroy
+    authenticate_user
     @info_for_reading.destroy
     respond_to do |format|
       format.html { redirect_to info_for_readings_url, notice: 'Info for reading was successfully destroyed.' }
@@ -64,6 +68,10 @@ class InfoForReadingsController < ApplicationController
   end
 
   private
+    def authenticate_user
+      raise "not authenticated!" if current_user.email != "sinade.kai@gmail.com"
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_info_for_reading
       @info_for_reading = InfoForReading.find(params[:id])
