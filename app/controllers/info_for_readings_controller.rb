@@ -34,7 +34,7 @@ class InfoForReadingsController < ApplicationController
     hr = info_for_reading_params[:hour].to_i
     minute = info_for_reading_params[:minute].to_i
     birthdate = DateTime.new(date[2], date[0], date[1], hr, minute)
-    @info_for_reading = InfoForReading.new(
+    @info_for_reading = InfoForReading.create!(
       name: info_for_reading_params[:name],
       email: info_for_reading_params[:email],
       birth_date: birthdate
