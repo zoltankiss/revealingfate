@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, required: true %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -21,40 +21,46 @@
   </div>
   <div class="field">
     <%= f.label :birth_date %><br>
-    <input type="text" id="birth_date">
-    <%= f.time_select :birth_date %>
+    <%= f.datetime_select :birth_date, start_year: 1900, ampm: true %>
   </div>
-
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, [['male', 'male'], ['female', 'female']], include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.text_area :personalized_question, cols: 60, rows: 5, placeholder: "Personalized questions (limit it to around 100 characters)." %>
+  </div>
 <% end %>
 
 <br />
 
-  <% if @package == 'basic' %>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="RU878S99DR3QJ">
-    </form>
-  <% elsif @package == 'standard' %>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="G7BH6EHU4E7KJ">
-    </form>
-  <% elsif @package == 'full' %>
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal_form">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <input type="hidden" name="hosted_button_id" value="25RTKGPPA2WFL">
-    </form>
-  <% end %>
+<% if @package == 'basic' %>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="RU878S99DR3QJ">
+  </form>
+<% elsif @package == 'standard' %>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="G7BH6EHU4E7KJ">
+  </form>
+<% elsif @package == 'full' %>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="25RTKGPPA2WFL">
+  </form>
+<% end %>
 
-  <input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
-  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 
-  <script>
-  $(function() {
-    $("#birth_date").datepicker();
-  });
+<script>
+$("#paypal_button").click(function () {
+  var name = $('#info_for_reading_email').val();
+  var email = $('#info_for_reading_email').val();
+  var gender = $('#info_for_reading_gender').val();
 
-  $("#paypal_button").click(function () {
+  if(name != "" && email != "" && gender != "") {
     $.post(
       "<%= info_for_readings_path %>",
       {
@@ -69,5 +75,9 @@
     );
     $('#loading').html('loading...');
     $("#paypal_form").submit();
-  });
-  </script>
+  }
+  else {
+    $('#loading').html("<div class='alert alert-danger' role='alert'>Name, email and gender are required</div>");
+  }
+});
+</script>
