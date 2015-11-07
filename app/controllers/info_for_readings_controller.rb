@@ -30,15 +30,23 @@ class InfoForReadingsController < ApplicationController
   # POST /info_for_readings
   # POST /info_for_readings.json
   def create
-    date = info_for_reading_params[:date].split('/').map(&:to_i)
-    hr = info_for_reading_params[:hour].to_i
+    year = info_for_reading_params[:year].to_i
+    month = info_for_reading_params[:month].to_i
+    day = info_for_reading_params[:day].to_i
+    hour = info_for_reading_params[:hour].to_i
+    hour = info_for_reading_params[:hour].to_i
     minute = info_for_reading_params[:minute].to_i
-    birthdate = DateTime.new(date[2], date[0], date[1], hr, minute)
-    @info_for_reading = InfoForReading.create!(
-      name: info_for_reading_params[:name],
-      email: info_for_reading_params[:email],
-      birth_date: birthdate
+    hash = info_for_reading_params.to_h
+    hash.delete('year')
+    hash.delete('month')
+    hash.delete('day')
+    hash.delete('hour')
+    hash.delete('minute')
+    birth_date = DateTime.new(
+      year, month, day, hour, minute
     )
+    hash.merge!(birth_date: birth_date)
+    @info_for_reading = InfoForReading.create!(hash)
     render text: 'success!'
   end
 
@@ -79,6 +87,8 @@ class InfoForReadingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_for_reading_params
-      params.require(:info_for_reading).permit(:name, :email, :date, :hour, :minute)
+      params.require(:info_for_reading).permit(
+        :name, :email, :year, :month, :day, :hour, :minute, :gender, :personalized_question, :service_type
+      )
     end
 end

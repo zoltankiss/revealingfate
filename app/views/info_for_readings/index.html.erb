@@ -8,6 +8,9 @@
       <th>Name</th>
       <th>Email</th>
       <th>Birth date</th>
+      <th>gender</th>
+      <th>personalized info</th>
+      <th>type of order</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +21,9 @@
         <td><%= info_for_reading.name %></td>
         <td><%= info_for_reading.email %></td>
         <td><%= info_for_reading.birth_date %></td>
+        <td><%= info_for_reading.gender %></td>
+        <td><%= info_for_reading.personalized_question %></td>
+        <td><%= info_for_reading.service_type %></td>
         <td><%= link_to 'Show', info_for_reading %></td>
         <td><%= link_to 'Edit', edit_info_for_reading_path(info_for_reading) %></td>
         <td><%= link_to 'Destroy', info_for_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>

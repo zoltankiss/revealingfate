@@ -30,6 +30,7 @@
   <div class="field">
     <%= f.text_area :personalized_question, cols: 60, rows: 5, placeholder: "Personalized questions (limit it to around 100 characters)." %>
   </div>
+  <input type="hidden" name="info_for_reading[service_type]" id="info_for_reading_service_type" value="<%= @package %>">
 <% end %>
 
 <br />
@@ -68,8 +69,14 @@ $("#paypal_button").click(function () {
           name: $("#info_for_reading_name").val(),
           email: $('#info_for_reading_email').val(),
           date: $('#birth_date').val(),
+          year: $('#info_for_reading_birth_date_1i').val(),
+          month: $('#info_for_reading_birth_date_2i').val(),
+          day: $('#info_for_reading_birth_date_3i').val(),
           hour: $('#info_for_reading_birth_date_4i').val(),
-          minute: $('#info_for_reading_birth_date_5i').val()
+          minute: $('#info_for_reading_birth_date_5i').val(),
+          gender: $('#info_for_reading_gender').val(),
+          personalized_question: $('#info_for_reading_personalized_question').val(),
+          service_type: $('#info_for_reading_service_type').val()
         }
       }
     );
