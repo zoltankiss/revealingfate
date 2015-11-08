@@ -28,7 +28,7 @@
     <%= f.select :gender, [['male', 'male'], ['female', 'female']], include_blank: true %>
   </div>
   <div class="field">
-    <%= f.text_area :personalized_question, cols: 60, rows: 5, placeholder: "Personalized questions (limit it to around 100 characters)." %>
+    <%= f.text_area :personalized_question, cols: 60, rows: 5, maxlength: 100, placeholder: "Personalized questions (limit it to around 100 characters)." %>
   </div>
   <input type="hidden" name="info_for_reading[service_type]" id="info_for_reading_service_type" value="<%= @package %>">
 <% end %>
