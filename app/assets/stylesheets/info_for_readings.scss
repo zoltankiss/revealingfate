@@ -1,3 +1,8 @@
 // Place all the styles related to the info_for_readings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#info-for-readings-table td, #info-for-readings-table th {
+  padding: 10px;
+}
