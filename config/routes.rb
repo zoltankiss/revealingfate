@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/thank_you_for_your_purchase' => 'pages#thank_you_for_your_purchase'
   get '/intern_ad' => 'pages#intern_ad'
+  get '/blog' => 'pages#blog'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
