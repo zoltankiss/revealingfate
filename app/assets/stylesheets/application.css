@@ -58,3 +58,11 @@ hr {
 .smaller { font-size: 25px; }
 
 .active { font-weight: bold; }
+
+#homepage-first-paragraph h2 {
+  font-size: 30px;
+}
+
+#homepage-second-paragraph h2 {
+  font-size: 27px;
+}
