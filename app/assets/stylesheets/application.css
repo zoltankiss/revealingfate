@@ -16,9 +16,13 @@
 
 h1 { font-family: 'Cinzel', serif; color: black !important; }
 
-h2 { font-family: 'Economica', sans-serif; color: black !important; }
+h2 { font-family: 'Philosopher', sans-serif; color: black !important; }
 
 p { color: #0c090a !important; }
+
+.nav ul li a {
+  font-family: 'Economica', serif; }
+}
 
 .sidebar { border-left: 1px solid grey; }
 
