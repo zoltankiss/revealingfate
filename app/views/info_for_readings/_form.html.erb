@@ -52,10 +52,43 @@
   </form>
 <% end %>
 
-<input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+<textarea rows="5" cols="60" readonly>
+Revealing Fate does not guarantee the accuracy or reliability of any of the information, content, advice, or advertisements contained in, resulting from, or linked to this website, its affiliates, or its customers. It is hereby stated that you, the person accessing this website, acknowledge and agree that any reliance upon any of these materials shall be at your sole judgment and risk. 
+
+Revealing Fate reserves the right, at its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the service, materials, advice, or products.
+
+Any and all service, materials, advice, correspondence, writings, astrology reports, astrology software and products offered by Revealing Fate are provided for entertainment purposes only. There are no exceptions. Any free or paid service and the materials are provided by Revealing Fate on an “AS IS” basis. No warranties are made as to the correctness of the service, materials, advice, or products. Revealing Fate expressly disclaims any and all warranties, expressed or implied.
+
+In no event shall Revealing Fate be liable for any direct, indirect, incidental, punitive or consequential damages of any kind whatsoever with respect to its service, software, reports, materials, advice, and products.
+
+THE SERVICES CONSIST OF THE FOLLOWING, WITHOUT LIMITATION: ASTROLOGICAL CONTENT, WRITTEN REPORTS, EMAIL CONSULTATIONS, LIVE AND/OR RECORDED SKYPE CONSULTATIONS VIA VIDEO AND/OR TEXT CHAT. REVEALINGFATE.COM DOES NOT REFER, ENDORSE, RECOMMEND, VERIFY, EVALUATE OR GUARANTEE ANY ADVICE, INFORMATION OR OTHER SERVICES PROVIDED BY THE ADVISORS, NOR DOES IT WARRANT THE VALIDITY, ACCURACY, COMPLETENESS, SAFETY, LEGALITY, QUALITY, OR APPLICABILITY OF THE CONTENT, ANYTHING SAID OR WRITTEN BY, OR ANY ADVICE PROVIDED BY, THE ADVISORS.
+
+WE MAY AMEND THESE TERMS OF SERVICE AT ANY TIME IN OUR DISCRETION. THESE CHANGES WILL BE EFFECTIVE IMMEDIATELY FOR NEW USERS OF THE SITE OR ASSOCIATED SERVICES. IF YOU DO NOT AGREE TO THE REVISED TERMS OF SERVICE, YOU MUST DISCONTINUE USING THE WEBSITE AND ASSOCIATED SERVICES. YOU AGREE THAT YOUR CONTINUED USE OF THE WEBSITE AFTER NOTICE OF SUCH AMENDMENT SHALL SIGNIFY YOUR ACCEPTANCE OF SUCH CHANGE. THE TERMS OF SERVICE MAY NOT BE OTHERWISE AMENDED EXCEPT BY A WRITING SIGNED BY BOTH YOU AND COMPANY.
+</textarea>
+
+<br />
+
+<label><input type="checkbox" id="terms"> I accept the <u>Terms and Conditions</u></label>
+
+<br /><br />
+
+<div id='paypal_button_div'>
+  <input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</div>
 
 <script>
+$("#paypal_button_div").hide();
+
+$("#terms").click(function () {
+  if ($("#terms").prop('checked')) {
+    $("#paypal_button_div").show();
+  }
+  else {
+    $("#paypal_button_div").hide();
+  }
+});
+
 $("#paypal_button").click(function () {
   var name = $('#info_for_reading_email').val();
   var email = $('#info_for_reading_email').val();
