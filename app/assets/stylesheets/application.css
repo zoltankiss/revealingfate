@@ -26,6 +26,12 @@ h2 {
   color: black !important;
 }
 
+h3 {
+  font-family: 'Lateef';
+  font-size: 50px !important;
+  color: #0c090a !important;
+}
+
 p {
   font-family: 'Lateef';
   font-size: 30px !important;
@@ -44,7 +50,7 @@ p.image-description {
 
 #reading_services h3 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 34px;
+  font-size: 34px !important;
 }
 
 .order-link {
@@ -81,7 +87,7 @@ hr {
 
 li {
   font-family: 'Lateef';
-  font-size: 30px !important;
+  font-size: 20px !important;
   color: #0c090a !important;
 }
 
