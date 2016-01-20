@@ -26,13 +26,17 @@ h2 {
   color: black !important;
 }
 
-p { color: #0c090a !important; }
+p {
+  font-family: 'Lateef';
+  font-size: 30px !important;
+  color: #0c090a !important;
+}
+
+p.image-description {
+  font-size: 20px !important;
+}
 
 .sidebar { border-left: 1px solid grey; }
-
-#bio p {
-  font-size: 17px;
-}
 
 #bio-text {
   padding-top: 15px;
@@ -74,3 +78,10 @@ hr {
 #homepage-second-paragraph h2 {
   font-size: 27px;
 }
+
+li {
+  font-family: 'Lateef';
+  font-size: 30px !important;
+  color: #0c090a !important;
+}
+
