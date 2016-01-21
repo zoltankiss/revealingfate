@@ -75,7 +75,15 @@ hr {
 
 .smaller { font-size: 25px; }
 
-.active { font-weight: bold; }
+.active {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.navbar-nav li a:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+}
 
 #homepage-first-paragraph h2 {
   font-size: 30px;
