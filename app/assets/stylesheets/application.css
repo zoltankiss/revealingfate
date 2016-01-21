@@ -38,6 +38,10 @@ p {
   color: #0c090a !important;
 }
 
+.blog-post p {
+  font-size: 23px !important;
+}
+
 p.image-description {
   font-size: 20px !important;
 }
