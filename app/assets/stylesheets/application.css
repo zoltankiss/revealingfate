@@ -113,6 +113,10 @@ li {
   font-size: 24px !important;
 }
 
+#about_page p.image-description {
+  font-size: 20px !important;
+}
+
 #team_page p {
   font-size: 24px !important;
 }
