@@ -107,3 +107,8 @@ li {
   border-right: 1px solid black;
   padding-right: 35px;
 }
+
+#about_page p {
+  padding-top: 15px;
+  padding-bottom: 1px;
+}
