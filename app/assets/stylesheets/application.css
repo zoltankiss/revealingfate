@@ -26,6 +26,10 @@ h2 {
   color: black !important;
 }
 
+#home-page h2 {
+  font-size: 27px;
+}
+
 h3 {
   font-family: 'Lateef';
   font-size: 50px !important;
@@ -77,6 +81,10 @@ hr {
   width: 100%;
 }
 
+.blog-post-title {
+  
+}
+
 .smaller { font-size: 25px; }
 
 .active {
@@ -119,3 +127,22 @@ li {
 #team_page p {
   font-size: 24px !important;
 }
+
+#revealing-fate-homepage-description {
+  margin-top: 75px;
+}
+
+#homepage-dragon-caption {
+  margin-right: 32px;
+}
+
+#homepage-dragon-paragraph {
+  margin-top: 5%;
+}
+
+#homepage-paragraph-its-no-wonder {
+  font-weight: bolder;
+  font-size: 24px !important;
+}
+
+
