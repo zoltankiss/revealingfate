@@ -139,3 +139,13 @@ li {
 #homepage-paragraph-its-no-wonder {
   font-size: 24px !important;
 }
+
+.team-member-bio {
+  border-left: 1px solid black;
+}
+
+.team-member-bio h3 {
+  margin-top: -0px;
+}
+
+
