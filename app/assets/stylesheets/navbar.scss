@@ -3,13 +3,34 @@ body {
   padding-bottom: 20px;
 }
 
-.navbar {
-  margin-bottom: 20px;
+#navcontainer ul
+{
+  padding: 10px 0 10px 0;
+  margin: 0 0 20px 0;
+  list-style-type: none;
+  background-color: #92696f;
+  color: #FFF;
+  width: 100%;
+  text-align: center;
 }
 
-.navbar a {
-  font-family: Economica;
+#navcontainer ul li {
+  font-family: Economica !important;
   font-size: 22px;
 }
 
-ul.nav { margin-left: 21%; }
+li {
+  display: inline;
+}
+
+li a
+{
+  text-decoration: none;
+  color: #FFF;
+  padding: .2em 1em;
+}
+
+li a:hover
+{
+  color: #fff;
+}
