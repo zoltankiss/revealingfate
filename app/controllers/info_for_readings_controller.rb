@@ -88,7 +88,9 @@ class InfoForReadingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def info_for_reading_params
       params.require(:info_for_reading).permit(
-        :name, :email, :year, :month, :day, :hour, :minute, :gender, :personalized_question, :service_type
+        :name, :email, :year, :month, :day, :hour, :minute, :gender,
+        :personalized_question_0, :personalized_question_1, :personalized_question_2, :personalized_question_3, :personalized_question_4,
+        :service_type
       )
     end
 end

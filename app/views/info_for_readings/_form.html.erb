@@ -28,7 +28,22 @@
     <%= f.select :gender, [['male', 'male'], ['female', 'female']], include_blank: true %>
   </div>
   <div class="field">
-    <%= f.text_area :personalized_question, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+    <% if @package == 'basic' %>
+      <p>You can ask one question with the basic reading. To ask more, upgrade to the standard reading to get 3, or get 5 with the full reading</p>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+    <% elsif @package == 'standard' %>
+      <p>You can ask three questions with the standard reading. To ask more, upgrade and get 5 with the full reading</p>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+    <% elsif @package == 'full' %>
+      <p>You can ask 5 questions with the full reading</p>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_3, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_4, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+    <% end %>
   </div>
   <input type="hidden" name="info_for_reading[service_type]" id="info_for_reading_service_type" value="<%= @package %>">
 <% end %>
@@ -108,7 +123,11 @@ $("#paypal_button").click(function () {
           hour: $('#info_for_reading_birth_date_4i').val(),
           minute: $('#info_for_reading_birth_date_5i').val(),
           gender: $('#info_for_reading_gender').val(),
-          personalized_question: $('#info_for_reading_personalized_question').val(),
+          personalized_question_0: $('#info_for_reading_personalized_question_0').val(),
+          personalized_question_1: $('#info_for_reading_personalized_question_1').val(),
+          personalized_question_2: $('#info_for_reading_personalized_question_2').val(),
+          personalized_question_3: $('#info_for_reading_personalized_question_3').val(),
+          personalized_question_4: $('#info_for_reading_personalized_question_4').val(),
           service_type: $('#info_for_reading_service_type').val()
         }
       }
