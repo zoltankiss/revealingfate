@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/contact_us' => 'pages#contact_us'
 
   get '/thank_you_for_your_purchase' => 'pages#thank_you_for_your_purchase'
+  get '/canceled_purchase' => 'pages#canceled_purchase'
   get '/intern_ad' => 'pages#intern_ad'
   get '/blog' => 'pages#blog'
   get '/about' => 'pages#about'
