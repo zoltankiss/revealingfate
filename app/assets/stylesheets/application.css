@@ -58,7 +58,12 @@ p.image-description {
 
 #reading_services h3 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 34px !important;
+  font-size: 23px !important;
+}
+
+.service-heading .btn {
+  font-size: 11px;
+  padding: 4px 11px;
 }
 
 .order-link {
@@ -151,5 +156,3 @@ li {
 .team-member-bio h3 {
   margin-top: -0px;
 }
-
-

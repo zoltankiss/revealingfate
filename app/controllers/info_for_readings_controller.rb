@@ -18,7 +18,7 @@ class InfoForReadingsController < ApplicationController
 
   # GET /info_for_readings/new
   def new
-    @package = params[:service]
+    @package = ReadingServicesHelper.tier_to_int params[:service]
     @info_for_reading = InfoForReading.new
   end
 
