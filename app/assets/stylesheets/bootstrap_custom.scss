@@ -1,3 +1,4 @@
+@import "bootstrap-sprockets";
 @import 'bootstrap';
 
 .btn-primary {
@@ -26,4 +27,12 @@
 
 .service-body {
   padding-top: 7px;
+}
+
+.service-body li {
+  list-style-type: none;
+}
+
+.service-body .glyphicon {
+  font-size: 13px;
 }
