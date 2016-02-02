@@ -159,5 +159,9 @@ li {
 
 .everything-plus {
   color: #446d73;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+}
+
+.service-body ul {
+  padding-left: 18px;
 }
