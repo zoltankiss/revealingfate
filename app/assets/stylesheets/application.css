@@ -169,3 +169,8 @@ li {
 .strikethrough {
   text-decoration: line-through;
 }
+
+.tier-box {
+  border-bottom: 1px solid black;
+}
+
