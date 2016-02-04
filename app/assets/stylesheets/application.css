@@ -58,11 +58,11 @@ p.image-description {
 
 #reading_services h3 {
   font-family: 'Patrick Hand', cursive;
-  font-size: 23px !important;
+  font-size: 20px !important;
 }
 
 .service-heading .btn {
-  font-size: 11px;
+  font-size: 10px;
   padding: 4px 11px;
 }
 
@@ -164,4 +164,8 @@ li {
 
 .service-body ul {
   padding-left: 18px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }
