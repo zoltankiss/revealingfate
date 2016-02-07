@@ -46,4 +46,3 @@ server '50.116.37.243', user: 'root', roles: %w{web app}, my_property: :my_value
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
-
