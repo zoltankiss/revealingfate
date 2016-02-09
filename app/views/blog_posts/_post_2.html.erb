@@ -1,6 +1,12 @@
 <div class="blog-post">
 <center>
-  <h3 class="blog-post-title">Outlook for Fire Monkey 2016: A Surprise for Many</h3>
+  <h3 class="blog-post-title">
+    <% if @do_not_render_title_as_link %>
+    Outlook for Fire Monkey 2016: A Surprise for Many
+    <% else %>
+      <%= link_to "Outlook for Fire Monkey 2016: A Surprise for Many", blog_post_path('outlook_for_fire_monkey_2016') %>
+    <% end %>
+  </h3>
 </center>
 <center><%= image_tag "fire_monkey_celebration.jpg" %></center>
 <br />
