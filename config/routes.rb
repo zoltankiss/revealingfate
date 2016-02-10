@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/blog' => 'blog_posts#index'
   get '/blog/:post_name' => 'blog_posts#show', as: 'blog_post'
+  get '/automator' => 'automation#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
