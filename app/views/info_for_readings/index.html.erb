@@ -1,45 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Info For Readings</h1>
-
-<table id="info-for-readings-table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Birth date</th>
-      <th>gender</th>
-      <th>personalized question 1</th>
-      <th>personalized question 2</th>
-      <th>personalized question 3</th>
-      <th>personalized question 4</th>
-      <th>personalized question 5</th>
-      <th>type of order</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @info_for_readings.each do |info_for_reading| %>
-      <tr>
-        <td><%= info_for_reading.name %></td>
-        <td><%= info_for_reading.email %></td>
-        <td><%= info_for_reading.birth_date %></td>
-        <td><%= info_for_reading.gender %></td>
-        <td><%= info_for_reading.personalized_question_0 %></td>
-        <td><%= info_for_reading.personalized_question_1 %></td>
-        <td><%= info_for_reading.personalized_question_2 %></td>
-        <td><%= info_for_reading.personalized_question_3 %></td>
-        <td><%= info_for_reading.personalized_question_4 %></td>
-        <td><%= info_for_reading.service_type %></td>
-        <td><%= link_to 'Show', info_for_reading %></td>
-        <td><%= link_to 'Edit', edit_info_for_reading_path(info_for_reading) %></td>
-        <td><%= link_to 'Destroy', info_for_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Info for reading', new_info_for_reading_path %>
+<% @info_for_readings.each do |info_for_reading| %>
+  Name: <%= info_for_reading.name %><br />
+  Email: <%= info_for_reading.email %><br />
+  Birth date: <%= info_for_reading.birth_date %><br />
+  gender: <%= info_for_reading.gender %><br />
+  date created: <%= info_for_reading.created_at %><br />
+  personalized question 1: <%= info_for_reading.personalized_question_0 %><br />
+  personalized question 2: <%= info_for_reading.personalized_question_1 %><br />
+  personalized question 3: <%= info_for_reading.personalized_question_2 %><br />
+  personalized question 4: <%= info_for_reading.personalized_question_3 %><br />
+  personalized question 5: <%= info_for_reading.personalized_question_4 %><br />
+  <hr />
+<% end %>
