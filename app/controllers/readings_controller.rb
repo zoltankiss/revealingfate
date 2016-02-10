@@ -76,7 +76,7 @@ class ReadingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_params
-      params[:reading]
+      params[:reading].permit(:title)
     end
 
     def authenticate_user
