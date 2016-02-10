@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :readings
   devise_for :users
   get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/blog' => 'blog_posts#index'
   get '/blog/:post_name' => 'blog_posts#show', as: 'blog_post'
-  get '/automator' => 'automation#index'
+  get '/automator' => redirect('/readings')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
