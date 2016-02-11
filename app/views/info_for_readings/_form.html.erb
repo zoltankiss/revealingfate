@@ -98,6 +98,16 @@ WE MAY AMEND THESE TERMS OF SERVICE AT ANY TIME IN OUR DISCRETION. THESE CHANGES
 </div>
 
 <script>
+<% if @package == 0 %>
+var package = 0;
+<% elsif @package == 1 %>
+var package = 1;
+<% elsif @package == 2 %>
+var package = 2;
+<% elsif @package == 3 %>
+var package = 3;
+<% end %>
+
 $("#paypal_button_div").hide();
 
 $("#terms").click(function () {
@@ -138,10 +148,50 @@ $("#paypal_button").click(function () {
       }
     );
     $('#loading').html('loading...');
-    $("#paypal_form").submit();
+
+    var all_personalized_questions = "";
+    if (package == 1) {
+      all_personalized_questions += $('#info_for_reading_personalized_question_0').val();
+    }
+    if (package == 2) {
+      all_personalized_questions += $('#info_for_reading_personalized_question_0').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_1').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_2').val();
+    }
+    if (package == 3) {
+      all_personalized_questions += $('#info_for_reading_personalized_question_0').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_1').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_2').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_3').val();
+      all_personalized_questions += $('#info_for_reading_personalized_question_4').val();
+    }
+
+    if (package != 0 && all_personalized_questions.match(/^[ ]*$/)) {
+      $('#missing_questions_popup').popup('show');
+    }
+    else {
+      submitPaypalForm();
+    }
   }
   else {
     $('#loading').html("<div class='alert alert-danger' role='alert'>Name, email, and gender are required</div>");
   }
 });
+
+function submitPaypalForm() {
+  $("#paypal_form").submit();
+}
+</script>
+
+<div id="missing_questions_popup" class="well" style="max-width:44em;">
+  <div class="alert alert-info" role="alert">We noticed you haven't filled out any of the personalized questions</div>
+  <p>Are you sure you don't want to ask any questions? This is included in the package you've selected</p>
+  <button class="missing_questions_popup_close btn btn-info">Back to Order Screen</button>
+  <button class="btn btn-success" onclick="submitPaypalForm()">Place Order Anyway</button>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#missing_questions_popup').popup();
+  });
 </script>
