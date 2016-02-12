@@ -20,6 +20,19 @@ set :keep_releases, 5
 
 server '50.116.37.243', user: 'root', roles: %w{web app}, my_property: :my_value
 
+task :finish_deploy do
+  on roles(:web) do
+    execute 'cp /proj_files/revealingfate/Gemfile /rails_apps/revealingfate/current/Gemfile'
+    execute 'cp /proj_files/revealingfate/database.yml /rails_apps/revealingfate/current/config/database.yml'
+    execute 'cp /proj_files/revealingfate/secrets.yml /rails_apps/revealingfate/current/config/secrets.yml'
+    execute "cd '#{release_path}'; bundle install"
+    execute "cd '#{release_path}'; RAILS_ENV=development bin/rake assets:precompile"
+    execute '/etc/init.d/apache2 restart'
+  end
+end
+
+after "deploy:published", "finish_deploy"
+
 
 # Custom SSH Options
 # ==================
