@@ -76,8 +76,14 @@ class InfoForReadingsController < ApplicationController
   end
 
   private
+    USERS = ['tatweiyeap@gmail.com', 'sinade.kai@gmail.com', 'zoltan.a.kiss@gmail.com']
+
     def authenticate_user
-      raise "not authenticated!" if current_user.email != "sinade.kai@gmail.com"
+      if current_user.nil? || !USERS.include?(current_user.email)
+        flash[:alert] = "you are not authenticated to view that page!"
+        redirect_to root_path
+        return
+      end
     end
 
     # Use callbacks to share common setup or constraints between actions.
