@@ -156,6 +156,10 @@ li {
   margin-top: -0px;
 }
 
+.mugshot {
+  width: 88%;
+}
+
 .everything-plus {
   color: #446d73;
   padding-bottom: 15px;
@@ -184,4 +188,3 @@ li {
 .tier-text {
   color: #446d73;
 }
-
