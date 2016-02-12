@@ -29,15 +29,15 @@
   </div>
   <div class="field">
     <% if @package == 1 %>
-      <p>You can ask one question with the basic reading. To ask more, upgrade to the standard reading to get 3, or get 5 with the full reading</p>
+      <p>You can ask one question with the <i><%= ReadingServicesHelper.make_verbose(1) %></i>. To ask more, upgrade to the <i><%= ReadingServicesHelper.make_verbose(2) %></i> to get 3, or get 5 with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
       <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
     <% elsif @package == 2 %>
-      <p>You can ask three questions with the standard reading. To ask more, upgrade and get 5 with the full reading</p>
+      <p>You can ask three questions with the <i><%= ReadingServicesHelper.make_verbose(2) %></i>. To ask more, upgrade and get 5 with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
       <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
     <% elsif @package == 3 %>
-      <p>You can ask 5 questions with the full reading</p>
+      <p>You can ask 5 questions with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
       <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>

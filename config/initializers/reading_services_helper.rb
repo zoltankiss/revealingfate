@@ -6,6 +6,10 @@ class ReadingServicesHelper
     'Premium'
   ]
 
+  def self.make_verbose(nth_tier)
+    "#{TIERS[nth_tier]} Reading"
+  end
+
   def self.urlify(nth_tier)
     TIERS[nth_tier].downcase
   end
