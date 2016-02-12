@@ -20,9 +20,6 @@
   <link href='https://fonts.googleapis.com/css?family=Economica|Cinzel|Philosopher|Lateef' rel='stylesheet' type='text/css'>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
 <div class="container">
   <div id="navcontainer">
     <ul id="navlist">
@@ -38,6 +35,12 @@
 
   <div class="jumbotron">
     <div id="loading"></div>
+    <% if notice %>
+      <div class="alert alert-warning" role="alert"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger" role="alert"><%= alert %></div>
+    <% end %>
     <%= yield %>
   </div>
 </div>
