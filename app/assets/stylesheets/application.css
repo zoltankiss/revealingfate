@@ -173,3 +173,15 @@ li {
   border-bottom: 1px solid black;
 }
 
+.hidden {
+  display: none;
+}
+
+.tier-a {
+  cursor: pointer;
+}
+
+.tier-text {
+  color: #446d73;
+}
+
