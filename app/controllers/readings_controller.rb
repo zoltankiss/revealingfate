@@ -78,8 +78,4 @@ class ReadingsController < ApplicationController
     def reading_params
       params[:reading].permit(:title)
     end
-
-    def authenticate_user
-      raise "not authenticated!" if current_user.email != "sinade.kai@gmail.com"
-    end
 end
