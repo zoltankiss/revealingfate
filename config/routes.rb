@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
+  resources :info_for_romantic_readings
   root 'pages#home'
   get '/team' => 'pages#team'
   get '/reading_services' => 'pages#reading_services'
+  get '/valentines_day' => 'pages#valentines_day', as: 'valentines_day'
+
   get '/newsletter_signup' => 'pages#newsletter_signup'
   get '/contact_us' => 'pages#contact_us'
 

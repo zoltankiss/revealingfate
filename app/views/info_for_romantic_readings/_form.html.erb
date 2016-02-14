@@ -1,0 +1,164 @@
+<%= form_for(@info_for_romantic_reading) do |f| %>
+  <% if @info_for_romantic_reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@info_for_romantic_reading.errors.count, "error") %> prohibited this info_for_romantic_reading from being saved:</h2>
+
+      <ul>
+      <% @info_for_romantic_reading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <label for="info_for_romantic_reading_name1">Name:</label><br />
+    <%= f.text_field :name1 %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_name2">Name of significant other:</label><br />
+    <%= f.text_field :name2 %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_email1">Email:</label><br />
+    <%= f.text_field :email1 %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_email2">Email of significant other:</label><br />
+    <%= f.text_field :email2 %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_birth_date1">Birth date:</label><br />
+    <%= f.datetime_select :birth_date1, start_year: 1900, ampm: true %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_birth_date2">Birth date of significant other:</label><br />
+    <%= f.datetime_select :birth_date2, start_year: 1900, ampm: true %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_gender1">Gender:</label><br />
+    <%= f.select :gender1, [['male', 'male'], ['female', 'female']], include_blank: true %>
+  </div>
+  <div class="field">
+    <label for="info_for_romantic_reading_gender2">Gender of significant other:</label><br />
+    <%= f.select :gender2, [['male', 'male'], ['female', 'female']], include_blank: true %>
+  </div>
+  <div class="field">
+      <p>You can ask one question with the <i>Valentine's Special: True Love's Destiny</i> package.</p>
+      <%= f.text_area :personalized_question, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question (limit it to around 100 words)" %>
+  </div>
+<% end %>
+
+<br />
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="33V4VBRNFQZYN">
+</form>
+
+<textarea rows="5" cols="60" readonly>
+Revealing Fate does not guarantee the accuracy or reliability of any of the information, content, advice, or advertisements contained in, resulting from, or linked to this website, its affiliates, or its customers. It is hereby stated that you, the person accessing this website, acknowledge and agree that any reliance upon any of these materials shall be at your sole judgment and risk. 
+
+Revealing Fate reserves the right, at its sole discretion and without any obligation, to make improvements to, or correct any error or omissions in any portion of the service, materials, advice, or products.
+
+Any and all service, materials, advice, correspondence, writings, astrology reports, astrology software and products offered by Revealing Fate are provided for entertainment purposes only. There are no exceptions. Any free or paid service and the materials are provided by Revealing Fate on an “AS IS” basis. No warranties are made as to the correctness of the service, materials, advice, or products. Revealing Fate expressly disclaims any and all warranties, expressed or implied.
+
+In no event shall Revealing Fate be liable for any direct, indirect, incidental, punitive or consequential damages of any kind whatsoever with respect to its service, software, reports, materials, advice, and products.
+
+THE SERVICES CONSIST OF THE FOLLOWING, WITHOUT LIMITATION: ASTROLOGICAL CONTENT, WRITTEN REPORTS, EMAIL CONSULTATIONS, LIVE AND/OR RECORDED SKYPE CONSULTATIONS VIA VIDEO AND/OR TEXT CHAT. REVEALINGFATE.COM DOES NOT REFER, ENDORSE, RECOMMEND, VERIFY, EVALUATE OR GUARANTEE ANY ADVICE, INFORMATION OR OTHER SERVICES PROVIDED BY THE ADVISORS, NOR DOES IT WARRANT THE VALIDITY, ACCURACY, COMPLETENESS, SAFETY, LEGALITY, QUALITY, OR APPLICABILITY OF THE CONTENT, ANYTHING SAID OR WRITTEN BY, OR ANY ADVICE PROVIDED BY, THE ADVISORS.
+
+WE MAY AMEND THESE TERMS OF SERVICE AT ANY TIME IN OUR DISCRETION. THESE CHANGES WILL BE EFFECTIVE IMMEDIATELY FOR NEW USERS OF THE SITE OR ASSOCIATED SERVICES. IF YOU DO NOT AGREE TO THE REVISED TERMS OF SERVICE, YOU MUST DISCONTINUE USING THE WEBSITE AND ASSOCIATED SERVICES. YOU AGREE THAT YOUR CONTINUED USE OF THE WEBSITE AFTER NOTICE OF SUCH AMENDMENT SHALL SIGNIFY YOUR ACCEPTANCE OF SUCH CHANGE. THE TERMS OF SERVICE MAY NOT BE OTHERWISE AMENDED EXCEPT BY A WRITING SIGNED BY BOTH YOU AND REVEALING FATE.
+</textarea>
+
+<br />
+
+<label><input type="checkbox" id="terms"> I accept the <u>Terms and Conditions</u></label>
+
+<br /><br />
+
+<div id='paypal_button_div'>
+  <input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</div>
+
+<script>
+
+$("#paypal_button_div").hide();
+
+$("#terms").click(function () {
+  if ($("#terms").prop('checked')) {
+    $("#paypal_button_div").show();
+  }
+  else {
+    $("#paypal_button_div").hide();
+  }
+});
+
+$("#paypal_button").click(function () {
+  var name1 = $('#info_for_romantic_reading_name1').val();
+  var email1 = $('#info_for_romantic_reading_email1').val();
+  var gender1 = $('#info_for_romantic_reading_gender1').val();
+  var name2 = $('#info_for_romantic_reading_name2').val();
+  var email2 = $('#info_for_romantic_reading_email2').val();
+  var gender2 = $('#info_for_romantic_reading_gender2').val();
+
+  if(name1 != "" && email1 != "" && gender1 != "" != name2 != "" && email2 != "" && gender2 != "") {
+    $.post(
+      "<%= info_for_romantic_readings_path %>",
+      {
+        info_for_romantic_reading: {
+          name1: $("#info_for_romantic_reading_name1").val(),
+          name2: $("#info_for_romantic_reading_name2").val(),
+          email1: $('#info_for_romantic_reading_email1').val(),
+          email2: $('#info_for_romantic_reading_email2').val(),
+          date1: $('#birth_date1').val(),
+          date2: $('#birth_date2').val(),
+          year1: $('#info_for_romantic_reading_birth_date1_1i').val(),
+          month1: $('#info_for_romantic_reading_birth_date1_2i').val(),
+          day1: $('#info_for_romantic_reading_birth_date1_3i').val(),
+          hour1: $('#info_for_romantic_reading_birth_date1_4i').val(),
+          minute1: $('#info_for_romantic_reading_birth_date1_5i').val(),
+          year2: $('#info_for_romantic_reading_birth_date2_1i').val(),
+          month2: $('#info_for_romantic_reading_birth_date2_2i').val(),
+          day2: $('#info_for_romantic_reading_birth_date2_3i').val(),
+          hour2: $('#info_for_romantic_reading_birth_date2_4i').val(),
+          minute2: $('#info_for_romantic_reading_birth_date2_5i').val(),
+          gender1: $('#info_for_romantic_reading_gender1').val(),
+          gender2: $('#info_for_romantic_reading_gender2').val(),
+          personalized_question: $('#info_for_romantic_reading_personalized_question').val()
+        }
+      }
+    );
+    $('#loading').html('loading...');
+
+    all_personalized_questions = $('#info_for_romantic_reading_personalized_question').val();
+
+    if (all_personalized_questions.match(/^[ ]*$/)) {
+      $('#missing_questions_popup').popup('show');
+    }
+    else {
+      submitPaypalForm();
+    }
+  }
+  else {
+    $('#loading').html("<div class='alert alert-danger' role='alert'>Name, email, and gender are required</div>");
+  }
+});
+
+function submitPaypalForm() {
+  $("#paypal_form").submit();
+}
+</script>
+
+<div id="missing_questions_popup" class="well" style="max-width:44em;">
+  <div class="alert alert-info" role="alert">We noticed you haven't filled out the personalized question</div>
+  <p>Are you sure you don't want to ask a question? This is included in the package you've selected</p>
+  <button class="missing_questions_popup_close btn btn-info">Back to Order Screen</button>
+  <button class="btn btn-success" onclick="submitPaypalForm()">Place Order Anyway</button>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('#missing_questions_popup').popup();
+  });
+</script>
