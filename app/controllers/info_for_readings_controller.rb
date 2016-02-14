@@ -8,6 +8,7 @@ class InfoForReadingsController < ApplicationController
   def index
     authenticate_user
     @info_for_readings = InfoForReading.all
+    @info_for_romantic_readings = InfoForRomanticReading.all
   end
 
   # GET /info_for_readings/1

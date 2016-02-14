@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231062233) do
+ActiveRecord::Schema.define(version: 20160214175421) do
 
   create_table "info_for_readings", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20151231062233) do
     t.string   "personalized_question_2"
     t.string   "personalized_question_3"
     t.string   "personalized_question_4"
+  end
+
+  create_table "info_for_romantic_readings", force: :cascade do |t|
+    t.string   "name1"
+    t.string   "name2"
+    t.string   "email1"
+    t.string   "email2"
+    t.string   "gender1"
+    t.string   "gender2"
+    t.string   "personalized_question"
+    t.datetime "birth_date1"
+    t.datetime "birth_date2"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|
