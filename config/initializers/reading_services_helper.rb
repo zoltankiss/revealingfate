@@ -1,7 +1,7 @@
 class ReadingServicesHelper
   TIERS = [
-    'Standard',
     'Basic',
+    'Standard',
     'Advanced',
     'Premium'
   ]
