@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get '/blog' => 'blog_posts#index'
   get '/blog/:post_name' => 'blog_posts#show', as: 'blog_post'
 
+  get '/code_to_paypal_url/:promo_code/package/:package' => 'promo_codes#paypal_url'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

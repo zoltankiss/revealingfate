@@ -92,6 +92,10 @@ WE MAY AMEND THESE TERMS OF SERVICE AT ANY TIME IN OUR DISCRETION. THESE CHANGES
 
 <br /><br />
 
+
+<input type="text" id="promo_code" size="35" placeholder="enter promo code if you have one">
+<br /><br />
+
 <div id='paypal_button_div'>
   <input id="paypal_button" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" alt="PayPal - The safer, easier way to pay online!">
   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
@@ -179,7 +183,20 @@ $("#paypal_button").click(function () {
 });
 
 function submitPaypalForm() {
-  $("#paypal_form").submit();
+  if ($('#promo_code').val() == '') {
+    $("#paypal_form").submit();
+  }
+  else {
+    $.get("/code_to_paypal_url/" + $('#promo_code').val() + "/package/" + package).done(function (data) {
+      if (data == 'not found') {
+        $('#loading').html("<div class='alert alert-danger' role='alert'>promo code not valid</div>");
+      }
+      else {
+        $('#loading').html("<div class='alert alert-info' role='alert'>loading...</div>");
+        window.open(data, '_blank');
+      }
+    })
+  }
 }
 </script>
 
