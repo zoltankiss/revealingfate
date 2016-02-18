@@ -8,8 +8,6 @@
   <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 </ul>
 
-<h2>Readings</h2>
-
 <% @info_for_readings.each do |info_for_reading| %>
   Name: <%= info_for_reading.name %><br />
   Email: <%= info_for_reading.email %><br />
@@ -21,22 +19,5 @@
   personalized question 3: <%= info_for_reading.personalized_question_2 %><br />
   personalized question 4: <%= info_for_reading.personalized_question_3 %><br />
   personalized question 5: <%= info_for_reading.personalized_question_4 %><br />
-  <hr />
-<% end %>
-
-
-<h2>Romantic Readings</h2>
-
-<% @info_for_romantic_readings.each do |info_for_romantic_reading| %>
-  Name 1: <%= info_for_romantic_reading.name1 %><br />
-  Name 2: <%= info_for_romantic_reading.name2 %><br />
-  Email 1: <%= info_for_romantic_reading.email1 %><br />
-  Email 2: <%= info_for_romantic_reading.email2 %><br />
-  Birth date 1: <%= info_for_romantic_reading.birth_date1 %><br />
-  Birth date 2: <%= info_for_romantic_reading.birth_date2 %><br />
-  gender 1: <%= info_for_romantic_reading.gender1 %><br />
-  gender 2: <%= info_for_romantic_reading.gender2 %><br />
-  date created: <%= info_for_romantic_reading.created_at %><br />
-  personalized question: <%= info_for_romantic_reading.personalized_question %><br />
   <hr />
 <% end %>
