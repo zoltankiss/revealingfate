@@ -97,7 +97,7 @@ class InfoForReadingsController < ApplicationController
       params.require(:info_for_reading).permit(
         :name, :email, :year, :month, :day, :hour, :minute, :gender,
         :personalized_question_0, :personalized_question_1, :personalized_question_2, :personalized_question_3, :personalized_question_4,
-        :service_type
+        :service_type, :title
       )
     end
 end
