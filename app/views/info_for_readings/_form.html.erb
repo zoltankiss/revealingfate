@@ -11,28 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name, required: true %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_date %><br>
-    <%= f.datetime_select :birth_date, start_year: 1900, ampm: true %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, [['male', 'male'], ['female', 'female']], include_blank: true %>
-  </div>
-  <div class="field">
+  <%= f.label :name, class: "form-label" %>
+  <select name="info_for_reading[title]" id="info_for_reading_title" class="title-field">
+    <option value="">Title</option>
+    <option value="mr">Mr</option>
+    <option value="ms">Ms</option>
+    <option value="mrs">Mrs</option>
+  </select>
+  <%= f.text_field :name, placeholder: "", class: "field" %><br>
+  <%= f.label :email, class: "form-label" %>
+  <%= f.text_field :email, placeholder: "", class: "field" %><br>
+  <%= f.label :gender, class: "form-label" %>
+  <select name="info_for_reading[gender]" id="info_for_reading_gender" class="gender-field">
+    <option value=""></option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div class="form-hr"></div>
+  <h2>Please enter your approximate birth date and time:</h2>
+  <%= f.datetime_select :birth_date, start_year: 1900, ampm: true %>
+  <div class="form-hr"></div>
+
+  <div class="field-wrapper">
     <% if @package == 1 %>
-      <p>You can ask one question with the <i><%= ReadingServicesHelper.make_verbose(1) %></i>. To ask more, upgrade to the <i><%= ReadingServicesHelper.make_verbose(2) %></i> to get 3, or get 5 with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
+      <p>You can ask one question with the <i><%= ReadingServicesHelper.make_verbose(1) %></i>.<br>
+      Upgrade to the <i><a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(2) %>">
+      <%= ReadingServicesHelper.make_verbose(2) %></a></i>
+      to ask 3, or ask 5 with the
+      <i><a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>">
+      <%= ReadingServicesHelper.make_verbose(3) %></a></i>.</p>
       <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
     <% elsif @package == 2 %>
-      <p>You can ask three questions with the <i><%= ReadingServicesHelper.make_verbose(2) %></i>. To ask more, upgrade and get 5 with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
+      <p>You can ask three questions with the <i><%= ReadingServicesHelper.make_verbose(2) %></i>.
+      To ask 5, upgrade to the <i><a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>">
+      <%= ReadingServicesHelper.make_verbose(3) %></a></i>.</p>
       <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
       <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
@@ -64,12 +76,12 @@
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
   <input type="hidden" name="cmd" value="_s-xclick">
   <input type="hidden" name="hosted_button_id" value="C5AVQ4ZLMMLZG">
-  </form>
+  </form><div class="form-hr"></div>
 <% elsif @package == 3 %>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="paypal_form">
   <input type="hidden" name="cmd" value="_s-xclick">
   <input type="hidden" name="hosted_button_id" value="AR7W85TTRHCZQ">
-  </form>
+  </form><div class="form-hr"></div>
 <% end %>
 
 <textarea rows="5" cols="60" readonly>
@@ -93,7 +105,7 @@ WE MAY AMEND THESE TERMS OF SERVICE AT ANY TIME IN OUR DISCRETION. THESE CHANGES
 <br /><br />
 
 
-<input type="text" id="promo_code" size="35" placeholder="enter promo code if you have one">
+<input type="text" id="promo_code" size="35" placeholder="enter promo code if you have one" class="promo-field">
 <br /><br />
 
 <div id='paypal_button_div'>
