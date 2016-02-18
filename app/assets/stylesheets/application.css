@@ -199,8 +199,10 @@ li {
   line-height: 180%;
 }
 
-.field, .title-field, .gender-field {
+.field, .prefix-field, .gender-field {
   position: relative;
+  display: inline;
+  vertical-align: middle;
   width: 290px;
   height: 40px;
   font-size: 190%;
@@ -212,9 +214,10 @@ li {
   background: white;
   line-height: 100% !important;
 }
-.title-field {
-  width: 75px;
+.prefix-field {
+  width: 105px;
   font-size: 150%;
+  cursor: pointer;
 }
 .gender-field {
   width: 195px;

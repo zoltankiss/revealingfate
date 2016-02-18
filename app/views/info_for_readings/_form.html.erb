@@ -12,8 +12,8 @@
   <% end %>
 
   <%= f.label :name, class: "form-label" %>
-  <select name="info_for_reading[title]" id="info_for_reading_title" class="title-field">
-    <option value="">Title</option>
+  <select name="info_for_reading[prefix]" id="info_for_reading_prefix" class="prefix-field">
+    <option value="">(prefix)</option>
     <option value="mr">Mr</option>
     <option value="ms">Ms</option>
     <option value="mrs">Mrs</option>
@@ -40,21 +40,21 @@
       to ask 3, or ask 5 with the
       <i><a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>">
       <%= ReadingServicesHelper.make_verbose(3) %></a></i>.</p>
-      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question (limit it to around 100 words)" %>
     <% elsif @package == 2 %>
       <p>You can ask three questions with the <i><%= ReadingServicesHelper.make_verbose(2) %></i>.
       To ask 5, upgrade to the <i><a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>">
       <%= ReadingServicesHelper.make_verbose(3) %></a></i>.</p>
-      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #1 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #2 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #3 (limit it to around 100 words)" %>
     <% elsif @package == 3 %>
       <p>You can ask 5 questions with the <i><%= ReadingServicesHelper.make_verbose(3) %></i>.</p>
-      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_3, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
-      <%= f.text_area :personalized_question_4, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized questions (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_0, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #1 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_1, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #2 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_2, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #3 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_3, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #4 (limit it to around 100 words)" %>
+      <%= f.text_area :personalized_question_4, cols: 60, rows: 5, maxlength: 700, placeholder: "Personalized question #5 (limit it to around 100 words)" %>
     <% end %>
   </div>
   <input type="hidden" name="info_for_reading[service_type]" id="info_for_reading_service_type" value="<%= @package %>">
