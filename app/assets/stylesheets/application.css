@@ -48,6 +48,7 @@ p {
 
 p.image-description {
   font-size: 20px !important;
+  line-height: 100%;
 }
 
 .sidebar { border-left: 1px solid grey; }
@@ -150,6 +151,7 @@ li {
 
 .team-member-bio {
   border-left: 1px solid black;
+  margin-bottom: 10px;
 }
 
 .team-member-bio h3 {
@@ -157,7 +159,8 @@ li {
 }
 
 .mugshot {
-  width: 88%;
+  width: 97%;
+  margin-bottom: 8px;
 }
 
 .everything-plus {
@@ -187,4 +190,72 @@ li {
 
 .tier-text {
   color: #446d73;
+}
+
+.form-wrapper {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.field-wrapper {
+  line-height: 180%;
+}
+
+.field, .title-field, .gender-field {
+  position: relative;
+  width: 290px;
+  height: 40px;
+  font-size: 190%;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid #d2d2d2 1px;
+  margin: 5px auto;
+  padding: 5px;
+  background: white;
+  line-height: 100% !important;
+}
+.title-field {
+  width: 75px;
+  font-size: 150%;
+}
+.gender-field {
+  width: 195px;
+}
+
+.form-label {
+  font-family: 'Philosopher';
+  font-size: 26px;
+  margin-right: 10px;
+  font-weight: 200;
+}
+
+#info_for_reading_birth_date_1i, #info_for_reading_birth_date_2i, #info_for_reading_birth_date_3i, #info_for_reading_birth_date_4i, #info_for_reading_birth_date_5i {
+  background: white;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 130%;
+}
+
+.promo-field {
+  position: relative;
+  width: 250px;
+  height: 30px;
+  font-size: 110%;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: solid #d2d2d2 1px;
+  margin: 5px auto;
+  padding: 2px 5px;
+  background: white;
+  line-height: 100% !important;
+}
+
+.form-hr {
+  position: relative;
+  width: 60%;
+  height: 1px;
+  background: #d8d8d8;
+  margin: 30px auto;
 }
