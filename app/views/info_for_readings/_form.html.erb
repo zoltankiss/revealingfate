@@ -164,7 +164,7 @@ $("#paypal_button").click(function () {
         }
       }
     );
-    $('#loading').html('loading...');
+    $('#loading').html("<div class='alert alert-info' role='alert'>loading...</div>");
 
     var all_personalized_questions = "";
     if (package == 1) {
@@ -223,5 +223,9 @@ function submitPaypalForm() {
 <script>
   $(document).ready(function () {
     $('#missing_questions_popup').popup();
+  });
+
+  $('.missing_questions_popup_close').click(function () {
+    $('#loading').html('');
   });
 </script>
