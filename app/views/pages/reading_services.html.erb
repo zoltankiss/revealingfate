@@ -11,106 +11,113 @@
 
   <br />
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="service">
-        <div class="service-heading">
-          <div class="row">
-            <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[0] %></h3></div>
-            <div class="col-md-6 text-right">
-              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(0) %>" class="btn btn-primary" role="button">$9.99</a>
+  <div class="col-md-3-wrapper row">
+    <div class="col-md-3-duo">
+      <div class="col-md-3">
+        <div class="service">
+          <div class="service-heading">
+            <div class="row">
+              <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[0] %></h3></div>
+              <div class="col-md-6 text-right">
+                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(0) %>" class="btn btn-primary" role="button">$9.99</a>
+              </div>
             </div>
           </div>
+  
+          <div class="service-body">
+            <ul>
+              <%= render partial: 'tier_features/tier_1' %>
+            </ul>
+          </div>
         </div>
-
-        <div class="service-body">
-          <ul>
-            <%= render partial: 'tier_features/tier_1' %>
-          </ul>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="service">
+          <div class="service-heading">
+            <div class="row">
+              <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[1] %></h3></div>
+              <div class="col-md-6 text-right">
+                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(1) %>" class="btn btn-primary" role="button">$19.99</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="service-body">
+            <span class="everything-plus"><a id="tier-1-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[0] %> </span>
+            <span id="plus-1">[+]</span><span id="minus-1" class="hidden">[-]</span></a></span>
+            <ul id="tier-1-box" class="tier-box hidden">
+              <%= render partial: 'tier_features/tier_1' %>
+            </ul>
+            <center><span class="everything-plus"><i>...plus:</i></span></center>
+  
+            <ul>
+              <%= render partial: 'tier_features/tier_2' %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3">
-      <div class="service">
-        <div class="service-heading">
-          <div class="row">
-            <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[1] %></h3></div>
-            <div class="col-md-6 text-right">
-              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(1) %>" class="btn btn-primary" role="button">$19.99</a>
+
+    <div class="col-md-3-duo">
+      <div class="col-md-3">
+        <div class="service">
+          <div class="service-heading">
+            <div class="row">
+              <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[2] %></h3></div>
+              <div class="col-md-6 text-right">
+                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(2) %>" class="btn btn-primary" role="button">$49.99</a>
+              </div>
             </div>
           </div>
+  
+          <div class="service-body">
+            <span class="everything-plus"><a id="tier-2-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[1] %> </span>
+            <span id="plus-2">[+]</span><span id="minus-2" class="hidden">[-]</span></a></span>
+            <ul id="tier-2-box" class="tier-box hidden">
+              <%= render partial: 'tier_features/tier_1' %>
+              <%= render partial: 'tier_features/tier_2' %>
+            </ul>
+            <center><span class="everything-plus"><i>...plus:</i></span></center>
+  
+            <ul>
+              <%= render partial: 'tier_features/tier_3' %>
+            </ul>
+          </div>
         </div>
-
-        <div class="service-body">
-          <span class="everything-plus"><a id="tier-1-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[0] %> </span>
-          <span id="plus-1">[+]</span><span id="minus-1" class="hidden">[-]</span></a></span>
-          <ul id="tier-1-box" class="tier-box hidden">
-            <%= render partial: 'tier_features/tier_1' %>
-          </ul>
-          <center><span class="everything-plus"><i>...plus:</i></span></center>
-
-          <ul>
-            <%= render partial: 'tier_features/tier_2' %>
-          </ul>
+      </div>
+  
+      <div class="col-md-3">
+        <div class="service">
+          <div class="service-heading">
+            <div class="row">
+              <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[3] %></h3></div>
+              <div class="col-md-6 text-right">
+                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>" class="btn btn-primary" role="button">$99.99</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="service-body">
+            <span class="everything-plus"> <a id="tier-3-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[2] %></span>
+            <span id="plus-3">[+]</span><span id="minus-3" class="hidden">[-]</span></a></span>
+            <ul id="tier-3-box" class="tier-box hidden">
+              <%= render partial: 'tier_features/tier_1' %>
+              <%= render partial: 'tier_features/tier_2' %>
+              <%= render partial: 'tier_features/tier_3' %>
+            </ul>
+            <center><span class="everything-plus"><i>...plus:</i></span></center>
+  
+            <ul>
+              <%= render partial: 'tier_features/tier_4' %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3">
-      <div class="service">
-        <div class="service-heading">
-          <div class="row">
-            <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[2] %></h3></div>
-            <div class="col-md-6 text-right">
-              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(2) %>" class="btn btn-primary" role="button">$49.99</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="service-body">
-          <span class="everything-plus"><a id="tier-2-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[1] %> </span>
-          <span id="plus-2">[+]</span><span id="minus-2" class="hidden">[-]</span></a></span>
-          <ul id="tier-2-box" class="tier-box hidden">
-            <%= render partial: 'tier_features/tier_1' %>
-            <%= render partial: 'tier_features/tier_2' %>
-          </ul>
-          <center><span class="everything-plus"><i>...plus:</i></span></center>
-
-          <ul>
-            <%= render partial: 'tier_features/tier_3' %>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3">
-      <div class="service">
-        <div class="service-heading">
-          <div class="row">
-            <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[3] %></h3></div>
-            <div class="col-md-6 text-right">
-              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>" class="btn btn-primary" role="button">$99.99</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="service-body">
-          <span class="everything-plus"> <a id="tier-3-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[2] %></span>
-          <span id="plus-3">[+]</span><span id="minus-3" class="hidden">[-]</span></a></span>
-          <ul id="tier-3-box" class="tier-box hidden">
-            <%= render partial: 'tier_features/tier_1' %>
-            <%= render partial: 'tier_features/tier_2' %>
-            <%= render partial: 'tier_features/tier_3' %>
-          </ul>
-          <center><span class="everything-plus"><i>...plus:</i></span></center>
-
-          <ul>
-            <%= render partial: 'tier_features/tier_4' %>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
