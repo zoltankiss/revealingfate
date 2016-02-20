@@ -139,8 +139,9 @@ $("#paypal_button").click(function () {
   var name = $('#info_for_reading_email').val();
   var email = $('#info_for_reading_email').val();
   var gender = $('#info_for_reading_gender').val();
+  var title = $('#info_for_reading_title').val();
 
-  if(name != "" && email != "" && gender != "") {
+  if(name != "" && email != "" && gender != "" && title != "") {
     $.post(
       "<%= info_for_readings_path %>",
       {
@@ -190,7 +191,7 @@ $("#paypal_button").click(function () {
     }
   }
   else {
-    $('#loading').html("<div class='alert alert-danger' role='alert'>Name, email, and gender are required</div>");
+    $('#loading').html("<div class='alert alert-danger' role='alert'>Name, email, title and gender are required</div>");
   }
 });
 
