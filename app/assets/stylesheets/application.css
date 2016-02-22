@@ -262,3 +262,24 @@ li {
   background: #d8d8d8;
   margin: 30px auto;
 }
+
+.basic-button {
+  border: 3px solid #dbdd33;
+  background-color: #C11B17;
+  color: #dbdd33;
+}
+
+.basic-button:hover {
+  border: 3px solid #dbdd33;
+  background-color: #C11B17;
+  color: #dbdd33;
+}
+
+.alert-reading-services {
+  background-color: #dbdd33;
+  color: #C11B17;
+}
+
+.basic-new-price {
+  font-size: 13px;
+}
