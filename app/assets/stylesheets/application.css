@@ -36,9 +36,9 @@ h3 {
   color: #0c090a !important;
 }
 
-p {
-  font-family: 'Lateef';
-  font-size: 30px !important;
+p, li {
+  font-family: 'Georgia', serif;
+  font-size: 27px !important;
   color: #0c090a !important;
 }
 
@@ -47,7 +47,7 @@ p {
 }
 
 p.image-description {
-  font-size: 20px !important;
+  font-size: 16px !important;
   line-height: 100%;
 }
 
@@ -60,6 +60,12 @@ p.image-description {
 #reading_services h3 {
   font-family: 'Patrick Hand', cursive;
   font-size: 20px !important;
+}
+
+#reading_services li {
+  font-family: 'Georgia', serif;
+  font-size: 16px !important;
+  color: #0c090a !important;
 }
 
 .service-heading .btn {
@@ -109,12 +115,6 @@ hr {
 
 #homepage-second-paragraph h2 {
   font-size: 27px;
-}
-
-li {
-  font-family: 'Lateef';
-  font-size: 20px !important;
-  color: #0c090a !important;
 }
 
 .blog-post {
