@@ -1,4 +1,6 @@
 <div id="reading_services">
+  <div class="alert alert-success alert-reading-services" role="alert">Limited Time Only: <u>$3 Basic Readings</u> for the Lantern Festival!</div>
+
   <center>
     <h2>Reading Services</h2>
   </center>
@@ -16,9 +18,9 @@
       <div class="service">
         <div class="service-heading">
           <div class="row">
-            <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[0] %></h3></div>
+            <div class="col-md-6"><h3 style="font-size: 23px !important"><%= ReadingServicesHelper::TIERS[0] %></h3></div>
             <div class="col-md-6 text-right">
-              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(0) %>" class="btn btn-primary" role="button">$9.99</a>
+              <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(0) %>" class="btn btn-primary basic-button" role="button"><span class="strikethrough">$9.99</span> <span class="basic-new-price">$2.99</span></a>
             </div>
           </div>
         </div>

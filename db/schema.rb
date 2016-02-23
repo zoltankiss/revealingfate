@@ -32,20 +32,6 @@ ActiveRecord::Schema.define(version: 20160218070518) do
     t.string   "prefix"
   end
 
-  create_table "info_for_romantic_readings", force: :cascade do |t|
-    t.string   "name1"
-    t.string   "name2"
-    t.string   "email1"
-    t.string   "email2"
-    t.string   "gender1"
-    t.string   "gender2"
-    t.string   "personalized_question"
-    t.datetime "birth_date1"
-    t.datetime "birth_date2"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
-  end
-
   create_table "readings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
