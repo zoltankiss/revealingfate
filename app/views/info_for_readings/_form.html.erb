@@ -1,3 +1,9 @@
+<center>
+  <h2><%= ReadingServicesHelper.make_verbose(@package) %></h2>
+</center>
+
+<hr />
+
 <%= form_for(@info_for_reading) do |f| %>
   <% if @info_for_reading.errors.any? %>
     <div id="error_explanation">
