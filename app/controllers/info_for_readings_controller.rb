@@ -7,7 +7,7 @@ class InfoForReadingsController < ApplicationController
   # GET /info_for_readings.json
   def index
     authenticate_user
-    @info_for_readings = InfoForReading.all
+    @info_for_readings = InfoForReading.order(created_at: :desc).all
   end
 
   # GET /info_for_readings/1
