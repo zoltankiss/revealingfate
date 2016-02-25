@@ -25,7 +25,6 @@
     <ul id="navlist">
       <li><a href="/" class="first-nav-element <%= raw('active') if request.env['PATH_INFO'] == '/' %>">Home</a></li>
       <li><a href="/about" <%= raw('class="active"') if request.env['PATH_INFO'] == '/about' %>>About</a></li>
-      <li><a href="/sample.pdf">Reading Sample</a></li>
       <li><a href="/reading_services" <%= raw('class="active"') if request.env['PATH_INFO'] == '/reading_services' %>>Reading Services</a></li>
       <li><a href="/blog" <%= raw('class="active"') if request.env['PATH_INFO'] == '/blog' %>>Blog</a></li>
       <li><a href="/team" <%= raw('class="active"') if request.env['PATH_INFO'] == '/team' %>>Our Team</a></li>
