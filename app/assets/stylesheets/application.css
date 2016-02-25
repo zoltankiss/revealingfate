@@ -135,7 +135,7 @@ p.image-description {
   width: 250px;
 }
 .col-md-3:hover {
-  border: #33CCFF 2px solid;
+  border: #dbdd33 2px solid;
 }
 
 .list-item {
@@ -256,7 +256,13 @@ hr {
 }
 
 .tier-box {
+  padding-bottom: 6px;
   border-bottom: 1px solid black;
+}
+
+#reading_services li {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .hidden {
