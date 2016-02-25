@@ -1,0 +1,13 @@
+<% if @plan == "Premium" %>
+    $("#pdf").html('<iframe src="http://www.revealingfate.com/Premium_Reading_Sample.pdf" style="width:100%;height:100%;"><p>Your browser does not support iframes.</p></iframe>');
+    $("#pdf-background, #pdf").show();
+<% elsif @plan == "Advanced" %>
+    $("#pdf").html('<iframe src="http://www.revealingfate.com/Advanced_Reading_Sample.pdf" style="width:100%;height:100%;"><p>Your browser does not support iframes.</p></iframe>');
+    $("#pdf-background, #pdf").show();
+<% elsif @plan == "Standard" %>
+    $("#pdf").html('<iframe src="http://www.revealingfate.com/Standard_Reading_Sample.pdf" style="width:100%;height:100%;"><p>Your browser does not support iframes.</p></iframe>');
+    $("#pdf-background, #pdf").show();
+<% elsif @plan == "Basic" %>
+    $("#pdf").html('<iframe src="http://www.revealingfate.com/Basic_Reading_Sample.pdf" style="width:100%;height:100%;"><p>Your browser does not support iframes.</p></iframe>');
+    $("#pdf-background, #pdf").show();
+<% end %>
