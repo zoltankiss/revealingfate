@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/code_to_paypal_url/:promo_code/package/:package' => 'promo_codes#paypal_url'
 
   get '/code_to_paypal_url/:promo_code/package/:package' => 'promo_codes#paypal_url'
+  
+  get 'show_pdf' => 'pages#show_pdf', as: "show_pdf"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

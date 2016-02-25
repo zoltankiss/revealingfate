@@ -41,6 +41,14 @@
     <% if alert %>
       <div class="alert alert-danger" role="alert"><%= alert %></div>
     <% end %>
+
+    <% if user_signed_in? %>
+      <div class="alert alert-warning" role="alert">
+        Since you're signed in, we have disabled google analytics tracking.
+        If you want to view this site without this modal so you can view exactly
+        what our users see, please visit the staging site.
+      </div>
+    <% end %>
     <%= yield %>
   </div>
 </div>
