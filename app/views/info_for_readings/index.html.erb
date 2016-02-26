@@ -7,6 +7,7 @@
 </ul>
 
 <% @info_for_readings.each do |info_for_reading| %>
+  Prefix: <%= info_for_reading.prefix %><br />
   Name: <%= info_for_reading.name %><br />
   Type of reading: <%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %><br />
   Email: <%= info_for_reading.email %><br />
