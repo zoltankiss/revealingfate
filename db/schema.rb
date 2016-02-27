@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160227230854) do
     t.string   "personalized_question_3"
     t.string   "personalized_question_4"
     t.string   "prefix"
+    t.boolean  "has_paid"
+    t.boolean  "completed"
   end
 
   create_table "readings", force: :cascade do |t|
