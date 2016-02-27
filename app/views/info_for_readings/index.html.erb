@@ -5,6 +5,7 @@
 <h2>Readings</h2>
 
 <% @info_for_readings.each do |info_for_reading| %>
+  <%= link_to "edit reading", edit_reading_path(info_for_reading.reading.id) %><br />
   Prefix: <%= info_for_reading.prefix %><br />
   Name: <%= info_for_reading.name %><br />
   Type of reading: <%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %><br />

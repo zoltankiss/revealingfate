@@ -8,6 +8,11 @@ class InfoForReadingsController < ApplicationController
   def index
     authenticate_user
     @info_for_readings = InfoForReading.order(created_at: :desc).all
+    @info_for_readings.each do |i|
+      if i.reading.blank?
+        Reading.create! info_for_reading_id: i.id, title: i.name
+      end
+    end
   end
 
   # GET /info_for_readings/1
