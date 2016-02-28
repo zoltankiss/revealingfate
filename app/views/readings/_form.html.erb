@@ -36,16 +36,16 @@
     </tr>
     <tr>
       <td>
-        <div class="td-content-heading">Sixth Celestial Stem</div>
+        <%= f.select :hour_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
       </td>
       <td>
-        <div class="td-content-heading">Third Celestial Stem</div>
+        <%= f.select :day_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
       </td>
       <td>
-        <div class="td-content-heading">Third Celestial Stem</div>
+        <%= f.select :month_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
       </td>
       <td>
-        <div class="td-content-heading">Sixth Celestial Stem</div>
+        <%= f.select :year_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
       </td>
     </tr>
     <tr>

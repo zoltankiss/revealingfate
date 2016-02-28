@@ -76,6 +76,12 @@ class ReadingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_params
-      params[:reading].permit(:title)
+      params[:reading].permit(
+        :title,
+        :hour_celestial_stem,
+        :day_celestial_stem,
+        :month_celestial_stem,
+        :year_celestial_stem
+      )
     end
 end
