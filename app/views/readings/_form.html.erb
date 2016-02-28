@@ -36,16 +36,24 @@
     </tr>
     <tr>
       <td>
-        <%= f.select :hour_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
+        <%= f.select :hour_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %><br />
+        <%= duality_and_element(@reading.hour_celestial_stem) %><br />
+        <%= cardinal_direction(@reading.hour_celestial_stem) %>
       </td>
       <td>
-        <%= f.select :day_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
+        <%= f.select :day_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %><br />
+        <%= duality_and_element(@reading.day_celestial_stem) %><br />
+        <%= cardinal_direction(@reading.day_celestial_stem) %>
       </td>
       <td>
-        <%= f.select :month_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
+        <%= f.select :month_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %><br />
+        <%= duality_and_element(@reading.month_celestial_stem) %><br />
+        <%= cardinal_direction(@reading.month_celestial_stem) %>
       </td>
       <td>
-        <%= f.select :year_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %>
+        <%= f.select :year_celestial_stem, (1..10).to_a.map { |e| ["#{number_to_human_readable(e)} celestial stem", e] } %><br />
+        <%= duality_and_element(@reading.year_celestial_stem) %><br />
+        <%= cardinal_direction(@reading.year_celestial_stem) %>
       </td>
     </tr>
     <tr>

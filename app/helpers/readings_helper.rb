@@ -23,4 +23,34 @@ module ReadingsHelper
       'tenth'
     end
   end
+
+  def duality_and_element(n)
+    elements = [
+      'Yang Wood',
+      'Yin Wood',
+      'Yang Fire',
+      'Yin Fire',
+      'Yang Earth',
+      'Yin Earth',
+      'Yang Metal',
+      'Yin Metal',
+      'Yang Water',
+      'Yin Water'
+    ]
+    elements[n - 1]
+  end
+
+  def cardinal_direction(n)
+    if duality_and_element(n).match /Wood/
+      'East'
+    elsif duality_and_element(n).match /Fire/
+      'South'
+    elsif duality_and_element(n).match /Earth/
+      'Center'
+    elsif duality_and_element(n).match /Metal/
+      'West'
+    elsif duality_and_element(n).match /Water/
+      'North'
+    end
+  end
 end
