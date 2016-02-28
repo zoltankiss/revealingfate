@@ -1,3 +1,4 @@
+<div id="reading">
 <%= form_for(@reading) do |f| %>
   <% if @reading.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +14,73 @@
   Name:&nbsp;&nbsp;<%= f.text_field :title %>
 
   <br /><br />
+
+  <table>
+    <tr>
+      <td>
+        <div class="td-heading">HOUR</div>
+        <div class="td-heading-content"><%= @reading.birth_date.strftime("%l:%M") %></div>
+      </td>
+      <td>
+        <div class="td-heading">DAY</div>
+        <div class="td-heading-content"><%= @reading.birth_date.strftime("%e") %></div>
+      </td>
+      <td>
+        <div class="td-heading">MONTH</div>
+        <div class="td-heading-content"><%= @reading.birth_date.strftime("%B") %></div>
+      </td>
+      <td>
+        <div class="td-heading">YEAR</div>
+        <div class="td-heading-content"><%= @reading.birth_date.strftime("%Y") %></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="td-content-heading">Sixth Celestial Stem</div>
+      </td>
+      <td>
+        <div class="td-content-heading">Third Celestial Stem</div>
+      </td>
+      <td>
+        <div class="td-content-heading">Third Celestial Stem</div>
+      </td>
+      <td>
+        <div class="td-content-heading">Sixth Celestial Stem</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="td-content-heading">Second Earthly Branch</div>
+      </td>
+      <td>
+        <div class="td-content-heading">Third Earthly Branch</div>
+      </td>
+      <td>
+        <div class="td-content-heading">First Earthly Branch</div>
+      </td>
+      <td>
+        <div class="td-content-heading">Tenth Earthly Branch</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="td-content">Season of</div>
+      </td>
+      <td>
+        <div class="td-content">Season of</div>
+      </td>
+      <td>
+        <div class="td-content">Season of</div>
+      </td>
+      <td>
+        <div class="td-content">Season of</div>
+      </td>
+    </tr>
+  </table>
+
+  <br /><br />
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
