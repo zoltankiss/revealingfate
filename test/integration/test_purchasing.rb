@@ -24,6 +24,7 @@ class TestPurchasing < ActionDispatch::IntegrationTest
     assert_equal 1, InfoForReading.count
     assert_equal 'mr', info_for_reading.prefix
     assert_equal 'male', info_for_reading.gender
+    assert_equal 'Zoltan Kiss', info_for_reading.name
     assert_equal DateTime.new(1990, 4, 10, 23, 33, 0), info_for_reading.birth_date
   end
 end
