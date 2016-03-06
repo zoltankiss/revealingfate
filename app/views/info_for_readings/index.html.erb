@@ -20,9 +20,9 @@
       <% end %>
     <% end %>
     <br />
+    Type of reading: <b style="color: <%= ReadingServicesHelper.color(info_for_reading.service_type.to_i) %>"><%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %></b><br />
     Prefix: <%= info_for_reading.prefix %><br />
     Name: <%= info_for_reading.name %><br />
-    Type of reading: <%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %><br />
     Email: <%= info_for_reading.email %><br />
     Birth date: <%= info_for_reading.birth_date %><br />
     gender: <%= info_for_reading.gender %><br />
