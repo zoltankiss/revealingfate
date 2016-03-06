@@ -7,7 +7,12 @@ class InfoForReadingsController < ApplicationController
   # GET /info_for_readings.json
   def index
     authenticate_user
-    @info_for_readings = InfoForReading.order(finished: :asc, created_at: :desc).all
+    @can_edit_spam = ['sinade.kai@gmail.com', 'zoltan.a.kiss@gmail.com']
+    @info_for_readings = if params[:show_spam]
+      InfoForReading.order(finished: :asc, created_at: :desc).all
+    else
+      InfoForReading.where(is_spam: false).order(finished: :asc, created_at: :desc).all
+    end
   end
 
   # GET /info_for_readings/1
@@ -97,7 +102,7 @@ class InfoForReadingsController < ApplicationController
       params.require(:info_for_reading).permit(
         :name, :email, :year, :month, :day, :hour, :minute, :gender,
         :personalized_question_0, :personalized_question_1, :personalized_question_2, :personalized_question_3, :personalized_question_4,
-        :service_type, :prefix, :finished
+        :service_type, :prefix, :finished, :is_spam
       )
     end
 end

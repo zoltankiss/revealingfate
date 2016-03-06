@@ -14,7 +14,12 @@
       <% end %>
       <input type="hidden" id="redirection_path" name="info_for_reading[redirection_path]" value="<%= info_for_readings_path %>#info_for_reading_<%= info_for_reading.id %>" />
       <%= f.select :finished, [['done', true], ['not done yet', false]], {}, { onchange: 'this.form.submit()' } %>
+      <% if @can_edit_spam %>
+          &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+          <%= f.select :is_spam, [['is spam', true], ['is legit', false]], {}, { onchange: 'this.form.submit()' } %>
+      <% end %>
     <% end %>
+    <br />
     Prefix: <%= info_for_reading.prefix %><br />
     Name: <%= info_for_reading.name %><br />
     Type of reading: <%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %><br />
