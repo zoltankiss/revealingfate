@@ -7,7 +7,7 @@ class InfoForReadingsController < ApplicationController
   # GET /info_for_readings.json
   def index
     authenticate_user
-    @info_for_readings = InfoForReading.order(created_at: :desc).all
+    @info_for_readings = InfoForReading.order(finished: :asc, created_at: :desc).all
   end
 
   # GET /info_for_readings/1
@@ -55,7 +55,8 @@ class InfoForReadingsController < ApplicationController
   def update
     respond_to do |format|
       if @info_for_reading.update(info_for_reading_params)
-        format.html { redirect_to @info_for_reading, notice: 'Info for reading was successfully updated.' }
+        redirection_path = params[:info_for_reading][:redirection_path] || @info_for_reading
+        format.html { redirect_to redirection_path, notice: 'Info for reading was successfully updated.' }
         format.json { render :show, status: :ok, location: @info_for_reading }
       else
         format.html { render :edit }
@@ -96,7 +97,7 @@ class InfoForReadingsController < ApplicationController
       params.require(:info_for_reading).permit(
         :name, :email, :year, :month, :day, :hour, :minute, :gender,
         :personalized_question_0, :personalized_question_1, :personalized_question_2, :personalized_question_3, :personalized_question_4,
-        :service_type, :prefix
+        :service_type, :prefix, :finished
       )
     end
 end
