@@ -7,7 +7,6 @@ class InfoForReadingsController < ApplicationController
   # GET /info_for_readings.json
   def index
     authenticate_user
-    @can_edit_spam = ['sinade.kai@gmail.com', 'zoltan.a.kiss@gmail.com']
     @info_for_readings = if params[:show_spam]
       InfoForReading.order(finished: :asc, created_at: :desc).all
     else
