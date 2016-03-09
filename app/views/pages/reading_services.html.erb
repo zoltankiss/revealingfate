@@ -4,7 +4,7 @@
   </div>
   <div id="pdf"></div>
 
-  <div class="alert alert-success alert-reading-services" role="alert">Limited Time Only: <u>$3 Basic Readings</u> for the Lantern Festival!</div>
+  <div class="alert alert-success alert-reading-services" role="alert">Today Only: <u>22% of premium readings</u> for the Blue Dragon Festival!</div>
 
   <center>
     <h2>Chinese Astrology Reading Services</h2>
@@ -26,7 +26,7 @@
             <div class="row">
               <div class="col-md-6"><h3 style="font-size: 23px !important"><%= ReadingServicesHelper::TIERS[0] %></h3></div>
               <div class="col-md-6 text-right">
-                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(0) %>" class="btn btn-primary basic-button" role="button"><span class="strikethrough">$9.99</span> <span class="basic-new-price">$2.99</span></a>
+                <%= render partial: 'pages/sale_button', locals: { url: ReadingServicesHelper.urlify(0), old_price: '$9.99', new_price: '$2.99' } %>
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@
             <div class="row">
               <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[1] %></h3></div>
               <div class="col-md-6 text-right">
-                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(1) %>" class="btn btn-primary" role="button">$19.99</a>
+                <%= render partial: 'pages/non_sale_button', locals: { url: ReadingServicesHelper.urlify(1), price: '$19.99' } %>
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@
             <div class="row">
               <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[2] %></h3></div>
               <div class="col-md-6 text-right">
-                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(2) %>" class="btn btn-primary" role="button">$49.99</a>
+                <%= render partial: 'pages/non_sale_button', locals: { url: ReadingServicesHelper.urlify(2), price: '$49.99' } %>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@
             <div class="row">
               <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[3] %></h3></div>
               <div class="col-md-6 text-right">
-                <a href="/purchase_reading_service/<%= ReadingServicesHelper.urlify(3) %>" class="btn btn-primary" role="button">$99.99</a>
+                <%= render partial: 'pages/non_sale_button', locals: { url: ReadingServicesHelper.urlify(3), price: '$99.99' } %>
               </div>
             </div>
           </div>
