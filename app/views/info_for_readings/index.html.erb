@@ -1,22 +1,41 @@
-<ul class="nav nav-pills nav-justified">
+<p id="notice"><%= notice %></p>
+
+<center><h1>Admin</h1></center>
+
+<ul class="nav nav-pills">
+  <li role="presentation" <%= raw('class="active"') unless request.url.match(/info_for_readings\?show_spam=true/) %>><a href="/info_for_readings">All Records</a></li>
+  <li role="presentation" <%= raw('class="active"') if request.url.match(/info_for_readings\?show_spam=true/) %>><a href="/info_for_readings?show_spam=true">All Records + Spam</a></li>
   <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 </ul>
+<br />
 
 <h2>Readings</h2>
 
 <% @info_for_readings.each do |info_for_reading| %>
   <%= link_to "edit reading", edit_reading_path(info_for_reading.reading.id) %><br />
-  Prefix: <%= info_for_reading.prefix %><br />
-  Name: <%= info_for_reading.name %><br />
-  Type of reading: <%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %><br />
-  Email: <%= info_for_reading.email %><br />
-  Birth date: <%= info_for_reading.birth_date %><br />
-  gender: <%= info_for_reading.gender %><br />
-  date created: <%= info_for_reading.created_at %><br />
-  personalized question 1: <%= info_for_reading.personalized_question_0 %><br />
-  personalized question 2: <%= info_for_reading.personalized_question_1 %><br />
-  personalized question 3: <%= info_for_reading.personalized_question_2 %><br />
-  personalized question 4: <%= info_for_reading.personalized_question_3 %><br />
-  personalized question 5: <%= info_for_reading.personalized_question_4 %><br />
+  <div id="info_for_reading_<%= info_for_reading.id %>">
+    <%= form_for info_for_reading do |f| %>
+      <% if info_for_reading.finished %>
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      <% end %>
+      <input type="hidden" id="redirection_path" name="info_for_reading[redirection_path]" value="<%= info_for_readings_path %>#info_for_reading_<%= info_for_reading.id %>" />
+      <%= f.select :finished, [['done', true], ['not done yet', false]], {}, { onchange: 'this.form.submit()' } %>
+        &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+        <%= f.select :is_spam, [['is spam', true], ['is legit', false]], {}, { onchange: 'this.form.submit()' } %>
+    <% end %>
+    <br />
+    Type of reading: <b style="color: <%= ReadingServicesHelper.color(info_for_reading.service_type.to_i) %>"><%= ReadingServicesHelper.make_verbose(info_for_reading.service_type.to_i) %></b><br />
+    Prefix: <%= info_for_reading.prefix %><br />
+    Name: <%= info_for_reading.name %><br />
+    Email: <%= info_for_reading.email %><br />
+    Birth date: <%= info_for_reading.birth_date %><br />
+    gender: <%= info_for_reading.gender %><br />
+    date created: <%= info_for_reading.created_at %><br />
+    personalized question 1: <%= info_for_reading.personalized_question_0 %><br />
+    personalized question 2: <%= info_for_reading.personalized_question_1 %><br />
+    personalized question 3: <%= info_for_reading.personalized_question_2 %><br />
+    personalized question 4: <%= info_for_reading.personalized_question_3 %><br />
+    personalized question 5: <%= info_for_reading.personalized_question_4 %><br />
+  </div>
   <hr />
 <% end %>
