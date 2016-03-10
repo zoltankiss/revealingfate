@@ -14,6 +14,8 @@
  *= require_self
  */
 
+
+
 h1 {
   font-family: 'Cinzel';
   font-size: 60px;
@@ -49,6 +51,7 @@ p, li {
 p.image-description {
   font-size: 16px !important;
   line-height: 100%;
+  margin-top: 10px;
 }
 
 .sidebar { border-left: 1px solid grey; }
@@ -110,7 +113,7 @@ hr {
 }
 
 #homepage-dragon-caption {
-  margin-right: 21px;
+  /*margin-right: 21px;*/
 }
 
 #homepage-paragraph-its-no-wonder {
@@ -256,4 +259,26 @@ hr {
 
 .basic-new-price {
   font-size: 13px;
+}
+.gold{
+  background: -webkit-linear-gradient(120deg, #e1c057 010%, #bf963d 23%, #e1c057 75%, #bf963d 100%);
+  background: linear-gradient(-30deg, #e1c057 010%, #bf963d 23%, #e1c057 75%, #bf963d 100%);
+  text-shadow: 0 0 5px rgba(150,118,48,.9);
+  color: #FFF;
+  border: 2px solid transparent;
+  -o-border-image: linear-gradient(135deg, #e1c057 0%, #8f5f1f 18%, #936322 35%, #bf963d 52%, #e1c057 68%, #f6ecd5 82%, #e1c057 100%);
+  border-image: -webkit-linear-gradient(315deg, #e1c057 0%, #8f5f1f 18%, #936322 35%, #bf963d 52%, #e1c057 68%, #f6ecd5 82%, #e1c057 100%);
+  border-image: linear-gradient(135deg, #e1c057 0%, #8f5f1f 18%, #936322 35%, #bf963d 52%, #e1c057 68%, #f6ecd5 82%, #e1c057 100%);
+  border-image-slice: 1;
+}
+.silver{
+  background: -webkit-linear-gradient(120deg, #e0e0e0 010%, #bcbcbc 23%, #f4f4f4 75%, #bcbcbc 100%);
+  background: linear-gradient(-30deg, #e0e0e0 010%, #bcbcbc 23%, #f4f4f4 75%, #bcbcbc 100%);
+  text-shadow: 0 0 5px #FFF;
+  color: #222;
+  border: 2px solid transparent;
+  -o-border-image: linear-gradient(135deg, #e0e0e0 0%,#919191 23%,#999999 33%,#bcbcbc 49%,#e0e0e0 68%,#f4f4f4 82%,#e0e0e0 100%);
+  border-image: -webkit-linear-gradient(315deg, #e0e0e0 0%,#919191 23%,#999999 33%,#bcbcbc 49%,#e0e0e0 68%,#f4f4f4 82%,#e0e0e0 100%);
+  border-image: linear-gradient(135deg, #e0e0e0 0%,#919191 23%,#999999 33%,#bcbcbc 49%,#e0e0e0 68%,#f4f4f4 82%,#e0e0e0 100%);
+  border-image-slice: 1;
 }

@@ -5,7 +5,9 @@ body{
 img{
   max-width: 100%;
 }
-
+.jumbotron{
+  background: rgba(238, 238, 238, 0.9);
+}
 @media screen and (max-width: 768px){
   .jumbotron{
     padding: 1em;
