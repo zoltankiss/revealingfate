@@ -276,3 +276,10 @@ hr {
   border-image: linear-gradient(135deg, #e0e0e0 0%,#919191 23%,#999999 33%,#bcbcbc 49%,#e0e0e0 68%,#f4f4f4 82%,#e0e0e0 100%);
   border-image-slice: 1;
 }
+
+.button-blue {
+  border: 3px solid #3b88a4;
+  background: #3b88a4;
+  color: white;
+}
+
