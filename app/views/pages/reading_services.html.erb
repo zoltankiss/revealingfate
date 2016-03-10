@@ -4,7 +4,7 @@
   </div>
   <div id="pdf"></div>
 
-  <div class="alert alert-success alert-reading-services" role="alert">Today Only: <u>22% of premium readings</u> for the Blue Dragon Festival!</div>
+  <div class="alert alert-success alert-reading-services" role="alert">Today Only: 22% of premium readings for the <%= link_to "Blue Dragon Festival!", blog_post_path('blog_dragon_festival') %></div>
 
   <center>
     <h2>Chinese Astrology Reading Services</h2>
@@ -107,7 +107,7 @@
             <div class="row">
               <div class="col-md-6"><h3><%= ReadingServicesHelper::TIERS[3] %></h3></div>
               <div class="col-md-6 text-right">
-                <%= render partial: 'pages/sale_button', locals: { url: ReadingServicesHelper.urlify(3), new_price: '$99.99', old_price: '$77.99' } %>
+                <%= render partial: 'pages/sale_button', locals: { url: ReadingServicesHelper.urlify(3), new_price: '$77.99', old_price: '$99.99' } %>
               </div>
             </div>
           </div>
