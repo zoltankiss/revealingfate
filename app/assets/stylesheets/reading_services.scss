@@ -54,7 +54,7 @@
 
   .col-md-3-duo {
     max-width: 100%;
-    min-width: 500px;
+    // min-width: 500px;
     vertical-align: top;
     text-align: center;
     margin: 0 auto !important;
@@ -63,6 +63,9 @@
     position: relative;
     display: inline-block;
     height: auto;
+    @media screen and (max-width: 360px){
+      padding: 0 10px;
+    }
   }
 
   .col-md-3 {
@@ -70,11 +73,15 @@
     display: inline-block;
     background: white;
     margin: 4px;
-    padding: 5px;
+    padding: 15px;
     border: #d9d9d9 2px solid;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     width: 250px;
+    @media screen and (max-width: 360px){
+      width:100%;
+      margin:0 0 15px 0;
+    }
   }
 
   .col-md-3:hover {
