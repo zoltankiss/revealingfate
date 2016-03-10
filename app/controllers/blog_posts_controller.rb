@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   POSTS = {
+    'blog_dragon_festival' => 'blog_posts/post_5',
     'ignite_the_new_year_revelation_by_raising_it_to_the_heavens' => 'blog_posts/post_4',
     'common_myths_surrounding_divination' => 'blog_posts/post_3',
     'outlook_for_fire_monkey_2016' => 'blog_posts/post_2',
