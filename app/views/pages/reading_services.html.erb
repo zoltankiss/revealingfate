@@ -4,7 +4,7 @@
   </div>
   <div id="pdf"></div>
 
-  <div class="alert alert-success alert-reading-services" role="alert">Limited Time Only: <u>$3 Basic Readings</u> for the Lantern Festival!</div>
+  <div class="alert alert-success alert-reading-services gold" role="alert">Limited Time Only: <u>$3 Basic Readings</u> for the Lantern Festival!</div>
 
   <center>
     <h2>Chinese Astrology Reading Services</h2>
@@ -30,7 +30,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="service-body">
             <ul>
               <%= render partial: 'tier_features/tier_1' %>
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="col-md-3">
         <div class="service">
           <div class="service-heading">
@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="service-body">
             <span class="everything-plus"><a id="tier-1-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[0] %> </span>
             <span id="plus-1">[+]</span><span id="minus-1" class="hidden">[-]</span></a></span>
@@ -59,7 +59,7 @@
               <%= render partial: 'tier_features/tier_1' %>
             </ul>
             <center><span class="everything-plus"><i>...plus:</i></span></center>
-  
+
             <ul>
               <%= render partial: 'tier_features/tier_2' %>
             </ul>
@@ -82,7 +82,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="service-body">
             <span class="everything-plus"><a id="tier-2-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[1] %> </span>
             <span id="plus-2">[+]</span><span id="minus-2" class="hidden">[-]</span></a></span>
@@ -91,7 +91,7 @@
               <%= render partial: 'tier_features/tier_2' %>
             </ul>
             <center><span class="everything-plus"><i>...plus:</i></span></center>
-  
+
             <ul>
               <%= render partial: 'tier_features/tier_3' %>
             </ul>
@@ -100,7 +100,7 @@
           </div>
         </div>
       </div>
-  
+
       <div class="col-md-3">
         <div class="service">
           <div class="service-heading">
@@ -111,7 +111,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="service-body">
             <span class="everything-plus"> <a id="tier-3-a" class="tier-a"><span class="tier-text">everything in <%= ReadingServicesHelper::TIERS[2] %></span>
             <span id="plus-3">[+]</span><span id="minus-3" class="hidden">[-]</span></a></span>
@@ -121,7 +121,7 @@
               <%= render partial: 'tier_features/tier_3' %>
             </ul>
             <center><span class="everything-plus"><i>...plus:</i></span></center>
-  
+
             <ul>
               <%= render partial: 'tier_features/tier_4' %>
             </ul>
@@ -154,4 +154,3 @@ $("#close-pdf").click(function() {
   $("#pdf, #pdf-background").hide();
 });
 </script>
-
