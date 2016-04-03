@@ -17,3 +17,5 @@
 /tmp
 
 db/schema.rb
+
+config/database.yml
