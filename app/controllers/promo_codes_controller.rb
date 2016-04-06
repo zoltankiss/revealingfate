@@ -6,41 +6,27 @@ class PromoCodesController < ApplicationController
     'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZL5HV34LT8A7U'
   ]
 
-  CODES = [
-    'HTF01',
-    'HTF02',
-    'HTF03',
-    'HTF04',
-    'HTF05',
+  def index
+    @promo_codes = PromoCode.where("expiration_date < ?", DateTime.now + 60.days)
+    @promo_code = PromoCode.new
+  end
 
-    'RWF01',
-    'RWF02',
-    'RWF03',
-    'RWF04',
-    'RWF05',
-
-    'AZF01',
-    'AZF02',
-    'AZF03',
-    'AZF04',
-    'AZF05',
-
-    'SCF01',
-    'SCF02',
-    'SCF03',
-    'SCF04',
-    'SCF05',
-
-    'AGF01',
-    'AGF02',
-    'AGF03',
-    'AGF04',
-    'AGF05'
-  ]
+  def create
+    PromoCode.create!(
+      expiration_date: DateTime.now + 60.days,
+      code: rand(1111111..9999999).to_s(16)
+    )
+    redirect_to promo_codes_path
+  end
 
   def paypal_url
-    if CODES.index(params[:promo_code])
+    code = PromoCode.where(code: params[:promo_code], used: nil).first
+    if code
+      code.used = true
+      code.save!
       render text: PAYPAL_URLS[params[:package].to_i]
+    elsif PromoCode.where(code: params[:promo_code], used: true).first
+        render text: 'expired'
     else
       render text: 'not found'
     end

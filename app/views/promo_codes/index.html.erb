@@ -1,0 +1,28 @@
+<%= render partial: 'partials/admin_nav' %>
+
+<br />
+
+<center>
+
+<%= form_for @promo_code do |f| %>
+  <%= f.submit "create promo_code" %>
+<% end %>
+
+<br />
+
+<table>
+  <tr>
+    <td><b>code</b></td>
+    <td><b>expiration date</b></td>
+    <td><b>used</b></td>
+  </tr>
+<% @promo_codes.each do |promo_code| %>
+  <tr>
+    <td style="padding-right: 20px"><%= promo_code.code %></td>
+    <td style="padding-right: 20px"><%= promo_code.expiration_date %></td>
+    <td style="padding-right: 20px"><%= promo_code.used %></td>
+  </tr>
+<% end %>
+</table>
+
+</center>

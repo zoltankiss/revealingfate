@@ -212,6 +212,9 @@ function submitPaypalForm() {
       if (data == 'not found') {
         $('#loading').html("<div class='alert alert-danger' role='alert'>promo code not valid</div>");
       }
+      else if (data == 'expired') {
+        $('#loading').html("<div class='alert alert-danger' role='alert'>promo code already used</div>");
+      }
       else {
         $('#loading').html("<div class='alert alert-info' role='alert'>loading...</div>");
         window.open(data, '_blank');

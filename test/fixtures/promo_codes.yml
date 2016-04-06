@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expiration_date: 2016-04-05 22:42:01
+  user_id: 
+  code: MyString
+  used: false
+
+two:
+  expiration_date: 2016-04-05 22:42:01
+  user_id: 
+  code: MyString
+  used: false
