@@ -1,4 +1,4 @@
-task :create_promo_codes do
+task :env => :create_promo_codes do
   CODES = [
     'HTF01',
     'HTF02',

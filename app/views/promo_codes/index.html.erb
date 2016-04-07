@@ -5,6 +5,7 @@
 <center>
 
 <%= form_for @promo_code do |f| %>
+  <%= f.select :discount_rate, [['30%', '30%'], ['50%', '50%']] %>
   <%= f.submit "create promo_code" %>
 <% end %>
 
@@ -15,12 +16,14 @@
     <td><b>code</b></td>
     <td><b>expiration date</b></td>
     <td><b>used</b></td>
+    <td><b>discount rate</b></td>
   </tr>
 <% @promo_codes.each do |promo_code| %>
   <tr>
     <td style="padding-right: 20px"><%= promo_code.code %></td>
     <td style="padding-right: 20px"><%= promo_code.expiration_date %></td>
     <td style="padding-right: 20px"><%= promo_code.used %></td>
+    <td style="padding-right: 20px"><%= promo_code.discount_rate %></td>
   </tr>
 <% end %>
 </table>
