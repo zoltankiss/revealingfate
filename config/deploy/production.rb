@@ -26,7 +26,8 @@ task :finish_deploy do
     execute 'cp /proj_files/revealingfate/database.yml /rails_apps/revealingfate/current/config/database.yml'
     execute 'cp /proj_files/revealingfate/secrets.yml /rails_apps/revealingfate/current/config/secrets.yml'
     execute "cd '#{release_path}'; bundle install"
-    execute "cd '#{release_path}'; RAILS_ENV=development bin/rake assets:precompile"
+    execute "cd '#{release_path}'; RAILS_ENV=production bin/rake assets:precompile"
+    execute "cd '#{release_path}'; RAILS_ENV=production bin/rake db:migrate"
     execute '/etc/init.d/apache2 restart'
   end
 end
