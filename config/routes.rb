@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   
   get 'show_pdf' => 'pages#show_pdf', as: "show_pdf"
 
-  resources :promo_codes, only: [:index, :create]
+  resources :promo_codes, only: [:index, :create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

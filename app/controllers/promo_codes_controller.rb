@@ -28,6 +28,11 @@ class PromoCodesController < ApplicationController
     redirect_to promo_codes_path
   end
 
+  def destroy
+    PromoCode.where(id: params[:id]).first.destroy
+    redirect_to promo_codes_path
+  end
+
   def paypal_url
     code = PromoCode.where(code: params[:promo_code], used: nil).first
     if code
