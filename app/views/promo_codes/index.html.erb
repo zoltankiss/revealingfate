@@ -13,6 +13,7 @@
 
 <table>
   <tr>
+    <td></td>
     <td><b>code</b></td>
     <td><b>expiration date</b></td>
     <td><b>used</b></td>
@@ -20,6 +21,7 @@
   </tr>
 <% @promo_codes.each do |promo_code| %>
   <tr>
+    <td style="padding-right: 20px"><%= link_to raw('<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>'), promo_code_path(promo_code.id), method: :delete, class: "btn btn-default" %></td>
     <td style="padding-right: 20px"><%= promo_code.code %></td>
     <td style="padding-right: 20px"><%= promo_code.expiration_date %></td>
     <td style="padding-right: 20px"><%= promo_code.used %></td>
