@@ -15,11 +15,13 @@ class PromoCodesController < ApplicationController
   }
 
   def index
+    authenticate_user
     @promo_codes = PromoCode.where("expiration_date < ?", DateTime.now + 60.days).order(:created_at).reverse_order
     @promo_code = PromoCode.new
   end
 
   def create
+    authenticate_user
     PromoCode.create!(
       expiration_date: DateTime.now + 60.days,
       code: rand(1111111..9999999).to_s(16),
@@ -29,6 +31,7 @@ class PromoCodesController < ApplicationController
   end
 
   def destroy
+    authenticate_user
     PromoCode.where(id: params[:id]).first.destroy
     redirect_to promo_codes_path
   end
