@@ -7,6 +7,23 @@
 
 <hr />
 
+<div class="row">
+    <div class="col-md-6 text-right">
+        try and guess which presidential candidate <%= link_to 'this is', '/unknown_candidate_1' %>
+    </div>
+    <div class="col-md-6 text-left">
+        <% if @president_survey %>
+            <%= form_for @president_survey do |f| %>
+                <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Ted Cruz', 'Ted Cruz'], ['Donald Trump', 'Donald Trump'], ['Bernie Sanders', 'Bernie Sanders'], ['John Kasisch', 'John Kasisch']] %>
+                <%= f.submit 'vote!' %>
+            <% end %>
+        <% else %>
+            <b>results:</b> <%= @president_survey_results %>
+        <% end %>
+    </div>
+</div>
+<br /><br />
+
 <div class="row" id="homepage-first-paragraph">
     <div class="col-md-4 text-center">
         <%= image_tag 'carvings.jpg' %>
