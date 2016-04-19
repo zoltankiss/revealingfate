@@ -5,7 +5,7 @@
 
 
 <br />
-<div>
+<div class="alert alert-success alert-reading-services silver" role="alert">
     <% if @president_survey %>
         <%= form_for @president_survey do |f| %>
             <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Ted Cruz', 'Ted Cruz'], ['Donald Trump', 'Donald Trump'], ['Bernie Sanders', 'Bernie Sanders'], ['John Kasisch', 'John Kasisch']] %>
