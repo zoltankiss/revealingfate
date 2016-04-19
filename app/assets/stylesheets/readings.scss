@@ -1,10 +1,15 @@
 .public-reading {
   p {
-    font-size: 14px !important;
+    font-size: 18px !important;
+    text-align: left;
   }
   .significance {
-    font-size: 14px !important;
-    color: blue;
+    font-size: 16px !important;
+    color: blue !important;
+    text-align: left !important;
+  }
+  .last-sentence-of-paragraph {
+    color: #1aae54;
   }
 }
 
