@@ -3,6 +3,21 @@
 <h1>Candidate X</h1>
 <h2>Somewhere in the United States</h2>
 
+
+<br />
+<div>
+    <% if @president_survey %>
+        <%= form_for @president_survey do |f| %>
+            <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Ted Cruz', 'Ted Cruz'], ['Donald Trump', 'Donald Trump'], ['Bernie Sanders', 'Bernie Sanders'], ['John Kasisch', 'John Kasisch']] %>
+            <%= f.submit 'vote!' %>
+        <% end %>
+    <% else %>
+        <b>results:</b> <%= @president_survey_results %>
+    <% end %>
+</div>
+
+<hr />
+
 <p>
 <i>Revealing Fate</i> is pleased to assist you in providing this Four Pillars of Destiny reading.* Thank you for entrusting us as we provide powerful insight into the workings of your life.
 </p>
@@ -10,6 +25,8 @@
 <%= image_tag 'trump_chart.png' %> 
 <br />
 <%= image_tag 'trump_calendar.png' %> 
+
+<br />
 
 <p>
   <i>Revealing Fate</i> analyzes this chart in a systematic and analytical way—taking into account the relationships between and among certain aspects. For men the Four Pillars are read with the Yang cycle; for women they’re read with the Yin cycle. This dynamic is similar to how one may read a direction as clockwise and counterclockwise or forward and reverse.
