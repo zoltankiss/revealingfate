@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
+  end
+
+  def trump_reading
     if cookies[:president_survey] == 'taken'
       @president_survey_results = PresidentSurvey.results
       @president_survey = nil
@@ -7,7 +10,7 @@ class PagesController < ApplicationController
       @president_survey = PresidentSurvey.new
     end
   end
-  
+
   def show_pdf
     @plan = params[:plan]
     respond_to do |format|
