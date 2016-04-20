@@ -37,6 +37,7 @@
     color: black  !important;
     text-align: left !important;
     padding-top: 10px;
+    text-decoration: underline;
   }
   p {
     font-size: 18px !important;
@@ -50,12 +51,18 @@
   .last-sentence-of-paragraph {
     color: #1aae54;
   }
+  #vote {
+    font-size: 20px;
+  }
   .links {
     color: purple;
     font-size: 26px;
     font-style: italic;
   }
   .disclaimer {
+    font-size: 12px !important;
+  }
+  .disclaimer-large {
     font-size: 12px !important;
   }
 }
