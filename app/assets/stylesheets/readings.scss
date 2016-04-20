@@ -27,6 +27,16 @@
 .public-reading {
   h2 {
     padding-top: 10px;
+    font-family: 'Philosopher';
+    font-size: 30px;
+    color: black !important;
+  }
+  h3 {
+    font-family: 'Philosopher' !important;
+    font-size: 28px !important;
+    color: black  !important;
+    text-align: left !important;
+    padding-top: 10px;
   }
   p {
     font-size: 18px !important;
@@ -39,5 +49,13 @@
   }
   .last-sentence-of-paragraph {
     color: #1aae54;
+  }
+  .links {
+    color: purple;
+    font-size: 26px;
+    font-style: italic;
+  }
+  .disclaimer {
+    font-size: 12px !important;
   }
 }
