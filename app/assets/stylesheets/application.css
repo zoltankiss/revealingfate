@@ -247,6 +247,7 @@ hr {
 }
 
 .alert-reading-services {
+  text-align: center;
   background-color: #dbdd33;
   color: #C11B17;
   font-size: 19px;
