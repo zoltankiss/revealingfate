@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   
   get 'show_pdf' => 'pages#show_pdf', as: "show_pdf"
   get '/unknown_candidate_1' => 'pages#trump_reading'
+  get '/unknown_candidate_2' => 'pages#sanders_reading'
 
   resources :promo_codes, only: [:index, :create, :destroy]
   resources :president_surveys

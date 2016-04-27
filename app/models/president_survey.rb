@@ -1,12 +1,12 @@
 class PresidentSurvey < ActiveRecord::Base
   extend ActionView::Helpers
 
-  def self.results
-    h = PresidentSurvey.where(choice: 'Hillary Clinton').count
-    ted = PresidentSurvey.where(choice: 'Ted Cruz').count
-    dt = PresidentSurvey.where(choice: 'Donald Trump').count
-    bern = PresidentSurvey.where(choice: 'Bernie Sanders').count
-    k = PresidentSurvey.where(choice: 'John Kasisch').count
+  def self.results(name)
+    h = PresidentSurvey.where(choice: 'Hillary Clinton', name: name).count
+    ted = PresidentSurvey.where(choice: 'Ted Cruz', name: name).count
+    dt = PresidentSurvey.where(choice: 'Donald Trump', name: name).count
+    bern = PresidentSurvey.where(choice: 'Bernie Sanders', name: name).count
+    k = PresidentSurvey.where(choice: 'John Kasisch', name: name).count
     "Clinton: #{pct h} Sanders: #{pct bern} Trump: #{pct dt} Cruz: #{pct ted} Kasisch #{pct k}"
   end
 
