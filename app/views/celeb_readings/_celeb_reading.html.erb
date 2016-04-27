@@ -1,0 +1,76 @@
+<div class="public-reading">
+<center>
+<h1><%= title %></h1>
+<hr />
+
+<h2>We've made anonymous readings for presidential candidates! We're releasing them one by one. Try to guess who this is:</h2>
+
+<br />
+
+<p style="text-align: center">
+<i>Revealing Fate</i> is pleased to assist you in providing this Four Pillars of Destiny reading.
+</p>
+
+<%= image_tag  "#{name}_chart.png" %> 
+<br />
+<%= image_tag "#{name}_calendar.png" %>
+
+<br /><br />
+
+<p class="disclaimer-large">
+  <i>Revealing Fate</i> analyzes this chart in a systematic and analytical way—taking into account the relationships between and among certain aspects. For men the Four Pillars are read with the Yang cycle; for women they’re read with the Yin cycle. This dynamic is similar to how one may read a direction as clockwise and counterclockwise or forward and reverse.
+</p>
+
+<p>
+Your personal Celestial Element Sign is categorized within the day pillar (marked in red text) and the following digressions are based on the interaction among all Celestial Branches, Earthly Stems, Zodiac signs, Five Phases, and Ten Gods within your Four Pillars of Destiny.
+</p>
+
+<div class="alert alert-success alert-reading-services gold" role="alert">
+<a href="/about" class="links">History of the Four Pillars of Destiny Chinese Astrology</a>
+</div>
+
+<%= yield :significance %>
+
+<div class="alert alert-success alert-reading-services gold" role="alert">
+<a href="/reading_services" class="links">Order your Astrology reading today</a>
+</div>
+
+<h2>Additional Analyses</h2><hr />
+
+<%= image_tag "#{name}_additional_analysis.png" %>
+
+<%= yield :analysis %>
+
+</center>
+
+<hr />
+<br />
+
+<div id="vote" class="alert alert-success alert-reading-services silver" role="alert">
+    <% if @president_survey %>
+        <%= form_for @president_survey do |f| %>
+        Who do you think this is?&nbsp;
+            <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Ted Cruz', 'Ted Cruz'], ['Donald Trump', 'Donald Trump'], ['Bernie Sanders', 'Bernie Sanders'], ['John Kasisch', 'John Kasisch']] %>
+            <input type="hidden" name="president_survey[name]" value="<%= name %>" />
+            <input type="hidden" name="president_survey[redirect]" value="<%= url %>" />
+            <%= f.submit 'vote!' %>
+        <% end %>
+    <% else %>
+        <b>results:</b> <%= @president_survey_results %>
+    <% end %>
+</div>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=566683086781084";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<%= yield :comments %>
+
+<p class="disclaimer">
+*Revealing Fate does not guarantee the accuracy or reliability of any of the information, content, or advice contained in, resulting from, or linked to this service and the website. Revealing Fate is in no way affiliated with any political party, entity, or convention, nor do the contents of this reading reflect any personal bias of the reader wherein interpretation is provided. The information contained within this reading is acquired via a reference of several hundred volumes of original Chinese texts on astrology and recordings of time division as ascribed by ancient and imperial practices, schools, and institutions. Revealing Fate is not held liable for any financial, social, or legal implications (implicit or otherwise) from the contents of this reading or the interaction generated from it on Revealing Fate website or the Revealing Fate Facebook page.
+</p>
