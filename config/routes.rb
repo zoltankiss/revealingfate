@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :readings
   devise_for :users
   get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
