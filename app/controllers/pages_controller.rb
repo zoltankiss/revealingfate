@@ -20,6 +20,15 @@ class PagesController < ApplicationController
     end
   end
 
+  def cruz_reading
+    if cookies[:cruz_president_survey] == 'taken'
+      @president_survey_results = PresidentSurvey.results('cruz')
+      @president_survey = nil
+    else
+      @president_survey = PresidentSurvey.new
+    end
+  end
+
   def show_pdf
     @plan = params[:plan]
     respond_to do |format|
