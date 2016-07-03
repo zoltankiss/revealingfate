@@ -4,5 +4,6 @@
   <li role="presentation" <%= raw('class="active"') if request.url.match(/promo_codes/) %>><a href="/promo_codes">Promo Codes</a></li>
   <li role="presentation" <%= raw('class="active"') if request.url.match(/info_for_readings$/) %>><a href="/info_for_readings">All Records</a></li>
   <li role="presentation" <%= raw('class="active"') if request.url.match(/info_for_readings\?show_spam=true/) %>><a href="/info_for_readings?show_spam=true">All Records + Spam</a></li>
+  <li role="presentation" <%= raw('class="active"') if request.url.match(/readings$/) %>><a href="/readings">Readings</a></li>
   <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 </ul>
