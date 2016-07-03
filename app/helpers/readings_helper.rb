@@ -25,6 +25,7 @@ module ReadingsHelper
   end
 
   def duality_and_element(n)
+    return if n.nil?
     elements = [
       'Yang Wood',
       'Yin Wood',
@@ -41,6 +42,7 @@ module ReadingsHelper
   end
 
   def cardinal_direction(n)
+    return if n.nil?
     if duality_and_element(n).match /Wood/
       'East'
     elsif duality_and_element(n).match /Fire/

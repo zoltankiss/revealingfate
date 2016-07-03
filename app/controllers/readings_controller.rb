@@ -12,6 +12,7 @@ class ReadingsController < ApplicationController
   # GET /readings/1.json
   def show
     authenticate_user
+    set_reading
   end
 
   # GET /readings/new
@@ -76,12 +77,17 @@ class ReadingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_params
-      params[:reading].permit(
-        :title,
-        :hour_celestial_stem,
-        :day_celestial_stem,
-        :month_celestial_stem,
-        :year_celestial_stem
+      params.require(:reading).permit(
+        :significance_of_your_celestial_element_sign,
+        :significance_of_the_year_pillar,
+        :significance_of_the_month_pillar,
+        :significance_of_the_day_pillar,
+        :significance_of_the_hour_pillar,
+        :five_phases_analysis,
+        :nature_and_disposition_analysis,
+        :shao_kang_jies_four_characters,
+        :feng_shui_analysis,
+        :propositions_for_the_day_master
       )
     end
 end
