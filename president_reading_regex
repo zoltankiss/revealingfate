@@ -6,3 +6,4 @@ sed -i"any_symbol" 's/”/"/' app/views/celeb_readings/_third_president_reading.
 sed -i"any_symbol" 's/^\(.*\.[ ]*\)$/<p>\1<\/p>/' app/views/celeb_readings/_third_president_reading.html.erb
 sed -i"any_symbol" 's/^Conclusion and Suggestions[ ]*$/<h2>Conclusion and Suggestions<\/h2>/' app/views/celeb_readings/_third_president_reading.html.erb
 sed -i"any_symbol" 's/\(This is indicated by.*\.\)/<span class="last-sentence-of-paragraph">\1<\/span>/' app/views/celeb_readings/_third_president_reading.html.erb
+sed -i"any_symbol" 's/’/\'/' app/views/celeb_readings/_third_president_reading.html.erb
