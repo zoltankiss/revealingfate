@@ -44,20 +44,6 @@ Your personal Celestial Element Sign is categorized within the day pillar (marke
 <hr />
 <br />
 
-<div id="vote" class="alert alert-success alert-reading-services silver" role="alert">
-    <% if @president_survey %>
-        <%= form_for @president_survey do |f| %>
-        Who do you think this is?&nbsp;
-            <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Donald Trump', 'Donald Trump']] %>
-            <input type="hidden" name="president_survey[name]" value="<%= name %>" />
-            <input type="hidden" name="president_survey[redirect]" value="<%= url %>" />
-            <%= f.submit 'vote!' %>
-        <% end %>
-    <% else %>
-        <b>results:</b> <%= @president_survey_results %>
-    <% end %>
-</div>
-
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
