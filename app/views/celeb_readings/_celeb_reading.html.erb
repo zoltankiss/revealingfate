@@ -3,15 +3,13 @@
 <h1><%= title %></h1>
 <hr />
 
-<h2>We've made anonymous readings for presidential candidates! We're releasing them one by one. Try to guess who this is (<a href='#vote'>vote</a> at bottom):</h2>
-
 <br />
 
 <p style="text-align: center">
 <i>Revealing Fate</i> is pleased to assist you in providing this Four Pillars of Destiny reading.
 </p>
 
-<%= image_tag  "#{name}_chart.png" %> 
+<%= image_tag  "#{name}_chart.png" %>
 <br />
 <%= image_tag "#{name}_calendar.png" %>
 
@@ -50,7 +48,7 @@ Your personal Celestial Element Sign is categorized within the day pillar (marke
     <% if @president_survey %>
         <%= form_for @president_survey do |f| %>
         Who do you think this is?&nbsp;
-            <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Ted Cruz', 'Ted Cruz'], ['Donald Trump', 'Donald Trump'], ['Bernie Sanders', 'Bernie Sanders'], ['John Kasisch', 'John Kasisch']] %>
+            <%= f.select :choice, [['Hillary Clinton', 'Hillary Clinton'], ['Donald Trump', 'Donald Trump']] %>
             <input type="hidden" name="president_survey[name]" value="<%= name %>" />
             <input type="hidden" name="president_survey[redirect]" value="<%= url %>" />
             <%= f.submit 'vote!' %>

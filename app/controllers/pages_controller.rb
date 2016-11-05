@@ -11,18 +11,9 @@ class PagesController < ApplicationController
     end
   end
 
-  def sanders_reading
-    if cookies[:sanders_president_survey] == 'taken'
-      @president_survey_results = PresidentSurvey.results('sanders')
-      @president_survey = nil
-    else
-      @president_survey = PresidentSurvey.new
-    end
-  end
-
-  def cruz_reading
-    if cookies[:cruz_president_survey] == 'taken'
-      @president_survey_results = PresidentSurvey.results('cruz')
+  def clinton_reading
+    if cookies[:clinton_president_survey] == 'taken'
+      @president_survey_results = PresidentSurvey.results('clinton')
       @president_survey = nil
     else
       @president_survey = PresidentSurvey.new

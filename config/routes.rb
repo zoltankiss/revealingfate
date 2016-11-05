@@ -19,11 +19,10 @@ Rails.application.routes.draw do
   get '/blog/:post_name' => 'blog_posts#show', as: 'blog_post'
 
   get '/code_to_paypal_url/:promo_code/package/:package' => 'promo_codes#paypal_url'
-  
+
   get 'show_pdf' => 'pages#show_pdf', as: "show_pdf"
-  get '/unknown_candidate_1' => 'pages#trump_reading'
-  get '/unknown_candidate_2' => 'pages#sanders_reading'
-  get '/unknown_candidate_3' => 'pages#cruz_reading'
+  get '/trump' => 'pages#trump_reading'
+  get '/clinton' => 'pages#clinton_reading'
 
   resources :promo_codes, only: [:index, :create, :destroy]
   resources :president_surveys
