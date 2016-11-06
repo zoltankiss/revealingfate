@@ -4,6 +4,7 @@
   <title><%= request.env['PATH_INFO'] == '/candidates' ? 'Revealing Fate Presidential Candidate Readings' : 'Revealing Fate' %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="How well do you think you know Hillary Clinton or Donald Trump? You're in for a surprise">
+  <meta property="og:image" content="<%= image_path('background.jpg') %>">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'yinyang.png' %>
