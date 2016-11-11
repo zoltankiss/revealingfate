@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= request.env['PATH_INFO'] == '/candidates' ? 'Revealing Fate Presidential Candidate Readings' : 'Revealing Fate' %></title>
+  <title><%= request.env['PATH_INFO'] == '/trump' ? 'The Destiny of Donald J. Trump' : 'Revealing Fate' %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="How well do you think you know Hillary Clinton or Donald Trump? You're in for a surprise">
-  <meta property="og:image" content="<%= image_tag "hillary-trump.png" %>">
+  <meta property="og:image" content="<%= image_tag "trump.png" %>">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'yinyang.png' %>
