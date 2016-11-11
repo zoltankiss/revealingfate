@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/purchase_reading_service/:service' => 'info_for_readings#new'
   resources :info_for_readings
   root 'pages#home'
-  get '/candidates' => 'pages#home'
+  get '/trump_homepage' => 'pages#home'
   get '/team' => 'pages#team'
   get '/reading_services' => 'pages#reading_services'
   get '/newsletter_signup' => 'pages#newsletter_signup'
