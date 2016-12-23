@@ -14,13 +14,21 @@
  *= require_self
  */
 
+.container-mobile {
+  padding: 0 !important;
+}
+
 h1.jumbotron-h1 {
-  font-size: 47px;
+  font-size: 2.3em;
+}
+
+h1.jumbotron-h1-mobile {
+  font-size: 1.5em;
 }
 
 h1 {
   font-family: 'Cinzel';
-  font-size: 60px;
+  font-size: 2.5em;
   color: black !important;
 }
 
@@ -288,4 +296,3 @@ hr {
   background: #3b88a4;
   color: white;
 }
-

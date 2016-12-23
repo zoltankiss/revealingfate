@@ -4,7 +4,7 @@
   <title><%= request.env['PATH_INFO'] == '/donald_trump_home_page' ? 'The Destiny of Donald J. Trump' : 'Revealing Fate' %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A look into the inner workings of Trump, his impact, his energies, and spiritual path. You may be surprised.">
-  <meta property="og:image" content="<%= image_tag 'dt.png' %>">
+  <meta property="og:image" content="<%= image_tag 'dt.png' %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'yinyang.png' %>
@@ -21,9 +21,29 @@
     }
   </style>
   <link href='https://fonts.googleapis.com/css?family=Economica|Cinzel|Philosopher|Lateef' rel='stylesheet' type='text/css'>
+</head>
+<% if browser.mobile? || browser.tablet?  %>
+<body class="body-mobile">
+<div class="container container-mobile">
+<% else %>
 <body>
-
-<div class="container">
+<div class="container"> 
+<% end %>
+  <% if browser.mobile? || browser.tablet? %>
+  <div id="navcontainer-mobile">
+    <%= link_to (image_tag "yinyang.png", class:"nav-left"), root_path %>
+    <%=image_tag "menu.png", id:"menu1", class:"nav-right"%>
+    <%=image_tag "menu.png", id:"menu2", class:"nav-right"%><br>
+    <div id="navlist-mobile">
+<!--  <a href="/about" <%= raw('class="active, nm-item"') if request.env['PATH_INFO'] == '/about' %>>About</a>
+ -->  <a href="/reading_services" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/reading_services' %>>Reading Services</a>
+      <a href="/blog" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/blog' %>>Blog</a>
+      <a href="/team" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/team' %>>Our Team</a>
+      <a href="/contact_us" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/contact_us' %>>Contact Us</a>
+    </div>
+  </div>
+  <div id="close-menu"></div>
+  <% else %>
   <div id="navcontainer">
     <ul id="navlist">
       <li><a href="/" class="first-nav-element <%= raw('active') if request.env['PATH_INFO'] == '/' %>">Home</a></li>
@@ -34,6 +54,7 @@
       <li><a href="/contact_us" <%= raw('class="active"') if request.env['PATH_INFO'] == '/contact_us' %>>Contact Us</a></li>
     </ul>
   </div>
+  <% end %>
 
   <div class="jumbotron">
     <div id="loading"></div>
@@ -55,6 +76,27 @@
   </div>
 </div>
 
+<% if browser.mobile? || browser.tablet? %>
+  <script type="text/javascript">
+    var height = $(window).height() / 1.7;
+    $("#menu1").click(function () {
+      $("#menu1").hide();
+      $("#menu2, #close-menu").show();
+      $("#navcontainer-mobile").animate({
+        height: "350px"
+      }, 400, function() {
+      });
+    });
+    $("#close-menu, #menu2").click(function () {
+      $("#close-menu, #menu2").hide();
+      $("#menu1").show();
+      $("#navcontainer-mobile").animate({
+        height: "55px"
+      }, 300, function() {
+      });
+    });
+  </script>
+<% end %>
 
 <% if !user_signed_in? && Rails.env.production? %>
   <script>

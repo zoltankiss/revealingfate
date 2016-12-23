@@ -9,7 +9,11 @@
 
 <div class="alert alert-success alert-reading-services gold jumbotron" role="alert">
 <div class="container">
+<% if browser.mobile? || browser.tablet? %>
+<h1 class="jumbotron-h1-mobile">The Destiny of Donald J. Trump</h1>
+<% else %>
 <h1 class="jumbotron-h1">The Destiny of Donald J. Trump</h1>
+<% end %>
 <br />
 <%= image_tag "dt.png" %>
 <br />
@@ -58,7 +62,7 @@
 
 
 <br />
-<center><a href="/reading_services" class="btn btn-primary" role="button">Order your reading today</a></center>
+<center><a href="/reading_services" class="btn btn-primary btn-lg" role="button">Order Your Reading Today!</a></center>
 <br />
 
 </div>

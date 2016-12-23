@@ -9,8 +9,11 @@
   </div>
 
   <hr />
-
+  <% if browser.mobile? || browser.tablet? %>
+  <div class="row row-mobile">
+  <% else %>
   <div class="row">
+  <% end %>
     <%= render partial: 'blog_posts/post_5' %>
     <hr />
     <%= render partial: 'blog_posts/post_4' %>
