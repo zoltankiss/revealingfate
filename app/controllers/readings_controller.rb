@@ -71,6 +71,7 @@ class ReadingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reading_params
       params.require(:reading).permit(
+        :title,
         :significance_of_your_celestial_element_sign,
         :significance_of_the_year_pillar,
         :significance_of_the_month_pillar,
