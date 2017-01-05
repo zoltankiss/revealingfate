@@ -1,7 +1,7 @@
 <%= form_for(@reading) do |f| %>
 
   <center>
-    <span>title:</span> <%= f.text_field :title %>
+    <span>title:</span> <%= readings_text_field f, :title %>
   </center>
   <br />
   <hr />
@@ -27,7 +27,7 @@
 
   <h2>Significance of Your Celestial Element Sign</h2><hr />
 
-  <%= f.text_area :significance_of_your_celestial_element_sign, cols: cols, rows: rows %>
+  <%= readings_text_area f, :significance_of_your_celestial_element_sign, cols: cols, rows: rows %>
 
   <h2>Significance of the Year Pillar</h2><hr />
 
@@ -35,7 +35,7 @@
 
   <p class="significance">It also represents the relationships with your parents, elders (such as uncles and aunts), grandparents, and in some cases legal guardians.</p>
 
-  <%= f.text_area :significance_of_the_year_pillar, cols: cols, rows: rows %>
+  <%= readings_text_area f, :significance_of_the_year_pillar, cols: cols, rows: rows %>
 
   <h2>Significance of the Month Pillar</h2><hr />
 
@@ -43,7 +43,7 @@
 
   <p class="significance">It also represents the relationships with your siblings, peers, colleagues, and friends. These are the most influential people in your life during your personal development stage.</p>
 
-  <%= f.text_area :significance_of_the_month_pillar, cols: cols, rows: rows %>
+  <%= readings_text_area f, :significance_of_the_month_pillar, cols: cols, rows: rows %>
 
   <h2>Significance of the Day Pillar</h2><hr />
 
@@ -51,7 +51,7 @@
 
   <p class="significance">It also represents relationships with the self, significant other(s), and with close friends as they truly understand and accept the real, core ‘you.’</p>
 
-  <%= f.text_area :significance_of_the_day_pillar, cols: cols, rows: rows %>
+  <%= readings_text_area f, :significance_of_the_day_pillar, cols: cols, rows: rows %>
 
   <h2>Significance of the Hour Pillar</h2><hr />
 
@@ -60,7 +60,7 @@
 
   <p class="significance">The Hour Pillar also represents the relationships with your offspring, younger adults, and your grand-children.</p>
 
-  <%= f.text_area :significance_of_the_hour_pillar, cols: cols, rows: rows %>
+  <%= readings_text_area f, :significance_of_the_hour_pillar, cols: cols, rows: rows %>
 
   <% end %>
 
@@ -68,19 +68,19 @@
 
   <h3>Nature and Disposition Analysis:</h3>
 
-  <%= f.text_area :nature_and_disposition_analysis, cols: cols, rows: rows %>
+  <%= readings_text_area f, :nature_and_disposition_analysis, cols: cols, rows: rows %>
 
   <h3>Shao Kang-Jie’s Four Characters:</h3>
 
-  <%= f.text_area :shao_kang_jies_four_characters, cols: cols, rows: rows %>
+  <%= readings_text_area f, :shao_kang_jies_four_characters, cols: cols, rows: rows %>
 
   <h3>Feng Shui Analysis:</h3>
 
-  <%= f.text_area :feng_shui_analysis %>
+  <%= readings_text_area f, :feng_shui_analysis %>
 
   <h3>Propositions for the Day Master:</h3>
 
-  <%= f.text_area :propositions_for_the_day_master, cols: cols, rows: rows %>
+  <%= readings_text_area f, :propositions_for_the_day_master, cols: cols, rows: rows %>
 
   <h3>Conclusion and Suggestions</h3>
 
