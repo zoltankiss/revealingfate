@@ -42,7 +42,8 @@ class ReadingsController < ApplicationController
   # PATCH/PUT /readings/1.json
   def update
     respond_to do |format|
-      redirect_to_id = reading_params.find { |k,v| @reading.send(k) != v }.try(:first)
+      fields = reading_params.select { |k,v| @reading.send(k) != v }
+      redirect_to_id = fields.keys.last
       if @reading.update(reading_params)
         redirect_url = edit_reading_path(@reading)
         redirect_url += "##{redirect_to_id}" if redirect_to_id
