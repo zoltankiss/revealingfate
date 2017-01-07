@@ -42,11 +42,14 @@ class ReadingsController < ApplicationController
   # PATCH/PUT /readings/1.json
   def update
     respond_to do |format|
-      fields = reading_params.select { |k,v| @reading.send(k) != v }
-      redirect_to_id = fields.keys.last
+      redirect_to_id = nil
+      if params['field_updated']
+        redirect_to_id = ReadingsHelper.button_label_to_button_id(params['field_updated'])
+      end
+
       if @reading.update(reading_params)
         redirect_url = edit_reading_path(@reading)
-        redirect_url += "##{redirect_to_id}" if redirect_to_id
+        redirect_url += '#' + redirect_to_id if redirect_to_id
         format.html { redirect_to redirect_url, notice: 'Reading was successfully updated.' }
         format.json { render :show, status: :ok, location: @reading }
       else
