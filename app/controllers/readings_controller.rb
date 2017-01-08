@@ -88,7 +88,19 @@ class ReadingsController < ApplicationController
         :nature_and_disposition_analysis,
         :shao_kang_jies_four_characters,
         :feng_shui_analysis,
-        :propositions_for_the_day_master
+        :propositions_for_the_day_master,
+        :hour,
+        :day,
+        :month,
+        :year,
+        :hour_element,
+        :day_element,
+        :month_element,
+        :year_element,
+        :hour_cardinal_direction,
+        :day_cardinal_direction,
+        :month_cardinal_direction,
+        :year_cardinal_direction
       )
     end
 end

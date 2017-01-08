@@ -1,10 +1,60 @@
 module ReadingsHelper
+  def self.number_to_ordinal(number)
+    case number
+    when 1
+      'First'
+    when 2
+      'Second'
+    when 3
+      'Third'
+    when 4
+      'Forth'
+    when 5
+      'Fifth'
+    when 6
+      'Sixth'
+    when 7
+      'Seventh'
+    when 8
+      'Eight'
+    when 9
+      'Ninth'
+    when 10
+      'Tenth'
+    else
+      raise 'could not find ordinal number'
+    end
+  end
+
+  def self.elements
+    [
+      'Yang Wood',
+      'Yin Wood',
+      'Yang Fire',
+      'Yin Fire',
+      'Yang Earth',
+      'Yin Earth',
+      'Yang Metal',
+      'Yin Metal',
+      'Yang Water',
+      'Yin Water'
+    ]
+  end
+
+  def self.cardinal_directions
+    ['East', 'South', 'Center', 'West', 'North']
+  end
+
   def self.button_id_to_button_label(button_id)
     "Update " + button_id.to_s.gsub('_', ' ')
   end
 
   def self.button_label_to_button_id(button_label)
     button_label.gsub(' ', '_').gsub("Update_", "")
+  end
+
+  def readings_select(form, str, fields, options)
+    form.select str, fields, options
   end
 
   def readings_text_field(form, str)
