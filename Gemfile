@@ -14,6 +14,8 @@ else
   gem 'sqlite3'
 end
 
+gem 'yaml_db_improved'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
