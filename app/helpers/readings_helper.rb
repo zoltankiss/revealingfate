@@ -41,6 +41,21 @@ module ReadingsHelper
     ]
   end
 
+  def self.roles
+    [
+      'Peer Assistance 比肩',
+      'Benevolent Plunder 劫財',
+      'Consuming Spirit 食神',
+      'Rebellious Officer 傷官',
+      'Direct Wealth 正財',
+      'Indirect Wealth 偏財',
+      'Just Officer 正官',
+      'Seven Threats 七殺',
+      'Direct Resource 正印',
+      'Indirect Resource 偏印'
+    ]
+  end
+
   def self.cardinal_directions
     ['East', 'South', 'Center', 'West', 'North']
   end

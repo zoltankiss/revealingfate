@@ -79,6 +79,10 @@ class ReadingsController < ApplicationController
     def reading_params
       params.require(:reading).permit(
         :title,
+        :hour_roles,
+        :day_roles,
+        :month_roles,
+        :year_roles,
         :significance_of_your_celestial_element_sign,
         :significance_of_the_year_pillar,
         :significance_of_the_month_pillar,

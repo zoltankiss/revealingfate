@@ -30,24 +30,28 @@
         <%= readings_select f, :hour, (1..10).to_a.map { |x| [ReadingsHelper.number_to_ordinal(x) + " Celestial Stem"] * 2 }, include_blank: true %>
         <%= readings_select f, :hour_element, ReadingsHelper.elements.map { |e| [e, e] }, include_blank: true %>
         <%= readings_select f, :hour_cardinal_direction, ReadingsHelper.cardinal_directions.map { |e| [e, e] }, include_blank: true %>
+        <%= readings_select f, :hour_roles, ReadingsHelper.roles.map { |e| [e, e] }, include_blank: true %>
       </td>
       <td>
         <h2>Day</h2>
         <%= readings_select f, :day, (1..10).to_a.map { |x| [ReadingsHelper.number_to_ordinal(x) + " Celestial Stem"] * 2 }, include_blank: true %>
         <%= readings_select f, :day_element, ReadingsHelper.elements.map { |e| [e, e] }, include_blank: true %>
         <%= readings_select f, :day_cardinal_direction, ReadingsHelper.cardinal_directions.map { |e| [e, e] }, include_blank: true %>
+        <%= readings_select f, :day_roles, ReadingsHelper.roles.map { |e| [e, e] }, include_blank: true %>
       </td>
       <td>
         <h2>Month</h2>
         <%= readings_select f, :month, (1..10).to_a.map { |x| [ReadingsHelper.number_to_ordinal(x) + " Celestial Stem"] * 2 }, include_blank: true %>
         <%= readings_select f, :month_element, ReadingsHelper.elements.map { |e| [e, e] }, include_blank: true %>
         <%= readings_select f, :month_cardinal_direction, ReadingsHelper.cardinal_directions.map { |e| [e, e] }, include_blank: true %>
+        <%= readings_select f, :month_roles, ReadingsHelper.roles.map { |e| [e, e] }, include_blank: true %>
       </td>
       <td>
         <h2>Year</h2>
         <%= readings_select f, :year, (1..10).to_a.map { |x| [ReadingsHelper.number_to_ordinal(x) + " Celestial Stem"] * 2 }, include_blank: true %>
         <%= readings_select f, :year_element, ReadingsHelper.elements.map { |e| [e, e] }, include_blank: true %>
         <%= readings_select f, :year_cardinal_direction, ReadingsHelper.cardinal_directions.map { |e| [e, e] }, include_blank: true %>
+        <%= readings_select f, :year_roles, ReadingsHelper.roles.map { |e| [e, e] }, include_blank: true %>
       </td>
     </tr>
   </table>
