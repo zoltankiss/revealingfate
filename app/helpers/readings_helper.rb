@@ -21,6 +21,10 @@ module ReadingsHelper
       'Ninth'
     when 10
       'Tenth'
+    when 11
+      'Eleventh'
+    when 12
+      'Twelfth'
     else
       raise 'could not find ordinal number'
     end
@@ -53,6 +57,74 @@ module ReadingsHelper
       'Seven Threats 七殺',
       'Direct Resource 正印',
       'Indirect Resource 偏印'
+    ]
+  end
+
+  def self.animals
+    [
+      'Rat 鼠',
+      'Ox 牛',
+      'Tiger  虎',
+      'Rabbit 兔',
+      'Dragon  龍',
+      'Snake 蛇',
+      'Horse 馬',
+      'Goat 羊',
+      'Monkey  猴',
+      'Rooster  雞',
+      'Dog  夠',
+      'Pig  豬'
+    ]
+  end
+
+  def self.directions
+    [
+      '0° North',
+      '30° North Northeast',
+      '60° East Northeast',
+      '90° East',
+      '120° East Southeast',
+      '150° South Southeast',
+      '180° South',
+      '210° South Southwest',
+      '240° West Southwest',
+      '270° West',
+      '300° West Northwest',
+      '330° North Northwest'
+    ]
+  end
+
+  def self.seasons
+    [
+      'Mid-Winter',
+      'Late Winter',
+      'Early Spring',
+      'Mid-Spring',
+      'Late Spring',
+      'Early Summer',
+      'Mid-Summer',
+      'Late Summer',
+      'Early Autumn',
+      'Mid-Autumn',
+      'Late Autumn',
+      'Early Winter'
+    ]
+  end
+
+  def self.auspicious_time
+    [
+      '11 PM to 1 AM',
+      '1 to 3 AM',
+      '3 to 5 AM',
+      '5 to 7 AM',
+      '7 to 9 AM',
+      '9 to 11 AM',
+      '11 AM to 1 PM',
+      '1 to 3 PM',
+      '3 to 5 PM',
+      '5 to 7 PM',
+      '7 to 9 PM',
+      '9 to 11 PM'
     ]
   end
 
