@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   get '/canceled_purchase' => 'pages#canceled_purchase'
   get '/intern_ad' => 'pages#intern_ad'
 
-  # temporarily take this down due to copyright concerns
-  # get '/about' => 'pages#about'
+  get '/about' => 'pages#about'
 
   get '/blog' => 'blog_posts#index'
   get '/blog/:post_name' => 'blog_posts#show', as: 'blog_post'
