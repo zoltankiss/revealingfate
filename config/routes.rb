@@ -26,6 +26,10 @@ Rails.application.routes.draw do
 
   resources :promo_codes, only: [:index, :create, :destroy]
   resources :president_surveys
+
+  # facebook cache urls
+  get '/the_blog_post_fire_rooster' => redirect('/blog/fire_rooster')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
