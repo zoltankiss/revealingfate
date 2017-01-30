@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= request.env['PATH_INFO'] == '/donald_trump_home_page' ? 'The Destiny of Donald J. Trump' : 'Revealing Fate' %></title>
+  <title>Revealing Fate</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A look into the inner workings of Trump, his impact, his energies, and spiritual path. You may be surprised.">
-  <meta property="og:image" content="<%= image_tag 'dt.png' %>
+  <% if request.env['PATH_INFO'] == '/blog/fire_rooster' %>
+    <meta name="description" content="2017 Fire Rooster: a Dance between Rivals.">
+  <% else %>
+    <meta name="description" content="We're an ancient Chinese astrology reading service. Our specialty is a form called the Four Pillars of Destiny.">
+  <% end %>
+  <meta property="og:image" content="<%= image_url 'big_rooster.jpg' %>" />
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
