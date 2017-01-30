@@ -10,10 +10,10 @@
 <div class="alert alert-success alert-reading-services gold jumbotron" role="alert">
 <div class="container">
 <% if browser.mobile? || browser.tablet? %>
-<h1 class="jumbotron-h1-mobile"><i class="em em-fire"></i><i class="em em-rooster"></i> Chinese New Year Sale!</h1>
+<h1 class="jumbotron-h1-mobile"><%= link_to raw('<i class="em em-fire"></i><i class="em em-rooster"></i>'), "/blog/fire_rooster_festival" %> Chinese New Year Sale!</h1>
 <p>Take 50% off any reading until February 8th</p>
 <% else %>
-<h1 class="jumbotron-h1"><i class="em em-fire"></i><i class="em em-rooster"></i> Chinese New Year Sale!</h1>
+<h1 class="jumbotron-h1"><%= link_to raw('<i class="em em-fire"></i><i class="em em-rooster"></i>'), "/blog/fire_rooster_festival" %> Chinese New Year Sale!</h1>
 <p>Take 50% off any <%= link_to 'reading', '/reading_services' %> until February 8th</p>
 <% end %>
 
