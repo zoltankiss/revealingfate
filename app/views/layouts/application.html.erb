@@ -41,7 +41,7 @@
     <%=image_tag "menu.png", id:"menu1", class:"nav-right"%>
     <%=image_tag "menu.png", id:"menu2", class:"nav-right"%><br>
     <div id="navlist-mobile">
-      <a href="/about" <%= raw('class="active, nm-item"') if request.env['PATH_INFO'] == '/about' %>>About</a>
+      <a href="/about" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/about' %>>About</a>
       <a href="/reading_services" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/reading_services' %>>Reading Services</a>
       <a href="/blog" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/blog' %>>Blog</a>
       <a href="/team" class="nm-item" <%= raw('class="active"') if request.env['PATH_INFO'] == '/team' %>>Our Team</a>
