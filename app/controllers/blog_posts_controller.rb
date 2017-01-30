@@ -8,6 +8,12 @@ class BlogPostsController < ApplicationController
     'what_does_a_four_pillars_reading_mean_to_you' => 'blog_posts/post_1'
   }
 
+  def fire_rooster
+    @partial = 'blog_posts/post_6'
+    @do_not_render_title_as_link = true
+    render :show
+  end
+
   def show
     unless POSTS.keys.include?(params[:post_name])
       @post_not_found = true

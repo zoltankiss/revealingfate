@@ -29,7 +29,7 @@ Rails.application.routes.draw do
 
   # facebook cache urls
   get '/the_blog_post_fire_rooster' => redirect('/blog/fire_rooster')
-  get '/fire_rooster2017' => redirect('/blog/fire_rooster')
+  get '/fire_rooster_2017' => 'blog_posts#fire_rooster'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
