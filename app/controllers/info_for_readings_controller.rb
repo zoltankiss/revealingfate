@@ -22,6 +22,16 @@ class InfoForReadingsController < ApplicationController
 
   # GET /info_for_readings/new
   def new
+    @price = case params[:service]
+    when 'basic'
+      '4.99'
+    when 'standard'
+      '9.99'
+    when 'advanced'
+      '25.99'
+    when 'premium'
+      '49.99'
+    end
     @package = ReadingServicesHelper.tier_to_int params[:service]
     @info_for_reading = InfoForReading.new
   end

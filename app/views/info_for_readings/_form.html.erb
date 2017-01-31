@@ -204,6 +204,13 @@ $("#paypal_button").click(function () {
 });
 
 function submitPaypalForm() {
+  fbq('track', 'Purchase', {
+  content_ids: ['1234', '4642', '35838'],
+  content_type: 'product'
+  value: <%= @price %>,
+  currency: 'USD'
+  });
+
   if ($('#promo_code').val() == '') {
     $("#paypal_form").submit();
   }
@@ -239,4 +246,11 @@ function submitPaypalForm() {
   $('.missing_questions_popup_close').click(function () {
     $('#loading').html('');
   });
+</script>
+
+<script>
+fbq('track', 'ViewContent', {
+value: <%= @price %>,
+currency: 'USD'
+});
 </script>
