@@ -23,7 +23,11 @@ h1.jumbotron-h1 {
 }
 
 h1.jumbotron-h1-mobile {
-  font-size: 1.5em;
+  font-size: .9em;
+}
+
+.p-mobile-homepage {
+  font-size: .5em;
 }
 
 h1 {
@@ -52,10 +56,6 @@ p, li {
   font-family: 'Georgia', serif;
   font-size: 27px !important;
   color: #0c090a !important;
-}
-
-.blog-post p {
-  font-size: 23px !important;
 }
 
 p.image-description {
