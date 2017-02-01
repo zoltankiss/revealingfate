@@ -28,7 +28,7 @@ class InfoForReadingsController < ApplicationController
     when 'standard'
       '9.99'
     when 'advanced'
-      '25.99'
+      '24.99'
     when 'premium'
       '49.99'
     end
