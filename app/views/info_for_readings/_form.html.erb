@@ -249,8 +249,5 @@ function submitPaypalForm() {
 </script>
 
 <script>
-fbq('track', 'ViewContent', {
-value: <%= @price %>,
-currency: 'USD'
-});
+fbq('track', 'InitiateCheckout');
 </script>
