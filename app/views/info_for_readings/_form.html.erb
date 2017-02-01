@@ -204,12 +204,38 @@ $("#paypal_button").click(function () {
 });
 
 function submitPaypalForm() {
+  <% if @price == '4.99' %>
   fbq('track', 'Purchase', {
   content_ids: ['1234', '4642', '35838'],
   content_type: 'product',
-  value: <%= @price %>,
+  value: 4.99,
   currency: 'USD'
   });
+  <% end %>
+  <% if @price == '9.99' %>
+  fbq('track', 'Purchase', {
+  content_ids: ['1234', '4642', '35838'],
+  content_type: 'product',
+  value: 9.99,
+  currency: 'USD'
+  });
+  <% end %>
+  <% if @price == '24.99' %>
+  fbq('track', 'Purchase', {
+  content_ids: ['1234', '4642', '35838'],
+  content_type: 'product',
+  value: 24.99,
+  currency: 'USD'
+  });
+  <% end %>
+  <% if @price == '49.99' %>
+  fbq('track', 'Purchase', {
+  content_ids: ['1234', '4642', '35838'],
+  content_type: 'product',
+  value: 49.99,
+  currency: 'USD'
+  });
+  <% end %>
 
   if ($('#promo_code').val() == '') {
     $("#paypal_form").submit();
