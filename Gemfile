@@ -70,3 +70,4 @@ gem 'bootstrap-sass'
 gem 'devise'
 
 gem 'capistrano'
+gem 'capistrano-rvm'

@@ -25,9 +25,10 @@ task :finish_deploy do
     execute 'cp /proj_files/revealingfate/Gemfile /rails_apps/revealingfate/current/Gemfile'
     execute 'cp /proj_files/revealingfate/database.yml /rails_apps/revealingfate/current/config/database.yml'
     execute 'cp /proj_files/revealingfate/secrets.yml /rails_apps/revealingfate/current/config/secrets.yml'
-    execute "cd '#{release_path}'; bundle install"
-    execute "cd '#{release_path}'; RAILS_ENV=production bin/rake assets:precompile"
-    execute "cd '#{release_path}'; RAILS_ENV=production bin/rake db:migrate"
+    execute 'cp /proj_files/setup_load_paths.rb /rails_apps/revealingfate/current/config/setup_load_paths.rb'
+    execute "cd '#{release_path}'; /usr/local/rvm/bin/rvm 2.3.3 do bundle"
+    execute "cd '#{release_path}'; RAILS_ENV=production /usr/local/rvm/bin/rvm 2.3.3 do rake assets:precompile"
+    execute "cd '#{release_path}'; RAILS_ENV=production /usr/local/rvm/bin/rvm 2.3.3 do rake db:migrate"
     execute '/etc/init.d/apache2 restart'
   end
 end

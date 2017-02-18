@@ -2,6 +2,7 @@
 
 set :application, 'revealingfate'
 set :repo_url, 'git@github.com:zoltankiss/revealingfate.git'
+set :rvm_ruby_version, '2.3.3'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
