@@ -92,6 +92,12 @@
         <%= readings_select f, :earthly_branch_roles_year, ReadingsHelper.roles.map { |e| [e, e] }, include_blank: true %>
       </td>
     </tr>
+    <tr>
+      <td><%= readings_select f, :hour_season, ReadingsHelper.seasons, include_blank: true %></td>
+      <td><%= readings_select f, :day_season, ReadingsHelper.seasons, include_blank: true %></td>
+      <td><%= readings_select f, :month_season, ReadingsHelper.seasons, include_blank: true %></td>
+      <td><%= readings_select f, :year_season, ReadingsHelper.seasons, include_blank: true %></td>
+    </tr>
   </table>
 
   <br />

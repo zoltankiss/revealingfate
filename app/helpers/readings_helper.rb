@@ -1,4 +1,21 @@
 module ReadingsHelper
+  def self.seasons
+    [
+      'Season of Biding - Dormancy',
+      'Season of Entwinement - Entanglement',
+      'Season of Attraction - Obsession',
+      'Season of Warmth - Fading',
+      'Season of Extension - Exhaustion',
+      'Season of Growth - Regression',
+      'Season of Rejuvenation - Injury',
+      'Season of Hearth (Complacency/Comfort) - Reluctance/Laziness/Comatose',
+      'Season of Passion - Depletion',
+      'Season of Treasure - Trap',
+      'Season of Density - Fatality',
+      'Season of Clarity - Blinding/Inhibition/Detriment/Discouragement/Prudence'
+    ]
+  end
+
   def self.number_to_ordinal(number)
     case number
     when 1

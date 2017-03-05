@@ -132,7 +132,11 @@ class ReadingsController < ApplicationController
         :hour_cardinal_direction,
         :day_cardinal_direction,
         :month_cardinal_direction,
-        :year_cardinal_direction
+        :year_cardinal_direction,
+        :hour_season,
+        :day_season,
+        :month_season,
+        :year_season
       )
     end
 end
