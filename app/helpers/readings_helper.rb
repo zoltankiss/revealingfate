@@ -8,11 +8,11 @@ module ReadingsHelper
       'Season of Extension - Exhaustion',
       'Season of Growth - Regression',
       'Season of Rejuvenation - Injury',
-      'Season of Hearth (Complacency/Comfort) - Reluctance/Laziness/Comatose',
+      'Season of Comfort - Reluctance',
       'Season of Passion - Depletion',
       'Season of Treasure - Trap',
       'Season of Density - Fatality',
-      'Season of Clarity - Blinding/Inhibition/Detriment/Discouragement/Prudence'
+      'Season of Clarity - Prudence'
     ]
   end
 
