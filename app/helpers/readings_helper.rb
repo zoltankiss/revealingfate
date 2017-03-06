@@ -157,8 +157,8 @@ module ReadingsHelper
     button_label.gsub(' ', '_').gsub("Update_", "")
   end
 
-  def readings_select(form, str, fields, options)
-    form.select str, fields, options
+  def readings_select(form, str, fields, options, html_options = {})
+    form.select str, fields, options, html_options.merge(class: 'reading_select')
   end
 
   def readings_text_field(form, str)
