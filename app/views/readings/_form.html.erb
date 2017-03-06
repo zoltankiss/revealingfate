@@ -93,10 +93,10 @@
       </td>
     </tr>
     <tr>
-      <td><%= readings_select f, :hour_season, ReadingsHelper.seasons, include_blank: true %></td>
-      <td><%= readings_select f, :day_season, ReadingsHelper.seasons, include_blank: true %></td>
-      <td><%= readings_select f, :month_season, ReadingsHelper.seasons, include_blank: true %></td>
-      <td><%= readings_select f, :year_season, ReadingsHelper.seasons, include_blank: true %></td>
+      <td><%= readings_select f, :hour_season, ReadingsHelper.seasons_of, include_blank: true %></td>
+      <td><%= readings_select f, :day_season, ReadingsHelper.seasons_of, include_blank: true %></td>
+      <td><%= readings_select f, :month_season, ReadingsHelper.seasons_of, include_blank: true %></td>
+      <td><%= readings_select f, :year_season, ReadingsHelper.seasons_of, include_blank: true %></td>
     </tr>
   </table>
 

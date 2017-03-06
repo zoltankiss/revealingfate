@@ -1,5 +1,5 @@
 module ReadingsHelper
-  def self.seasons
+  def self.seasons_of
     [
       'Season of Biding - Dormancy',
       'Season of Entwinement - Entanglement',
