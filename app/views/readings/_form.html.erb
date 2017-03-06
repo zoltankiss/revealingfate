@@ -108,6 +108,8 @@
 
   <h2>Significance of Your Celestial Element Sign</h2><hr />
 
+  <%= readings_select f, :significance_of_your_celestial_element_sign_element, ReadingsHelper.elements, include_blank: false %>
+
   <%= readings_text_area f, :significance_of_your_celestial_element_sign, cols: cols, rows: rows %>
 
   <h2>Significance of the Year Pillar</h2><hr />

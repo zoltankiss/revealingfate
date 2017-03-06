@@ -47,7 +47,14 @@ class ReadingsController < ApplicationController
         redirect_to_id = ReadingsHelper.button_label_to_button_id(params['field_updated'])
       end
 
-      if @reading.update(reading_params)
+      update_params = {}
+      if @reading.significance_of_your_celestial_element_sign_element != reading_params[:significance_of_your_celestial_element_sign_element]
+        update_params[:significance_of_your_celestial_element_sign] = Reading.significance_of_your_celestial_element_sign_text(
+          reading_params[:significance_of_your_celestial_element_sign_element]
+        )
+      end
+
+      if @reading.update(reading_params.merge(update_params))
         redirect_url = edit_reading_path(@reading)
         redirect_url += '#' + redirect_to_id if redirect_to_id
         format.html { redirect_to redirect_url, notice: 'Reading was successfully updated.' }
@@ -136,7 +143,8 @@ class ReadingsController < ApplicationController
         :hour_season,
         :day_season,
         :month_season,
-        :year_season
+        :year_season,
+        :significance_of_your_celestial_element_sign_element
       )
     end
 end
