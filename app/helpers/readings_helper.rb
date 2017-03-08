@@ -1,19 +1,23 @@
 module ReadingsHelper
+  def self.seasons_of_elements_map
+    {
+      'Season of Biding - Dormancy' => ['癸 gui3（陰水）- Yin Water'],
+      'Season of Entwinement - Entanglement' => ['乙 yi3 （陰木）- Yin Wood'],
+      'Season of Attraction - Obsession' => ['辛 xin1（陰金）- Yin Metal'],
+      'Season of Warmth - Fading' => ['己 ji3（陰土）- Yang Earth', '丁 ding1（陰火）- Yin Fire'],
+      'Season of Extension - Exhaustion' => ['甲 jia1（陽木）- Yang Wood', '壬 ren2 （陽水）- Yang Water'],
+      'Season of Growth - Regression' => ['癸 gui3（陰水）- Yin Water', '乙 yi3 （陰木）- Yin Wood', '戊 wu4（陽土）- Yang Earth'],
+      'Season of Rejuvenation - Injury' => ['丁 ding1（陰火）- Yin Fire', '辛 xin1（陰金）- Yin Metal', '戊 wu4（陽土）- Yang Earth'],
+      'Season of Comfort - Reluctance' => ['乙 yi3 （陰木）- Yin Wood', '丁 ding1（陰火）- Yin Fire', '己 ji3（陰土）- Yin Earth'],
+      'Season of Passion - Depletion' => ['戊 wu4（陽土）- Yang Earth', '丙 bing3（陽火）- Yang Fire', '甲 jia1（陽木）- Yang Wood'],
+      'Season of Treasure - Trap' => ['辛 xin1（陰金）- Yin Metal', '癸 gui3（陰水）- Yin Water', '己 ji3（陰土）- Yin Earth'],
+      'Season of Density - Fatality' => ['戊 wu4（陽土）- Yang Earth', '庚 geng1（陽金）- Yang Metal', '丙 bing3（陽火）- Yang Fire'],
+      'Season of Clarity - Prudence' => ['戊 wu4（陽土）- Yang Earth', '壬 ren2 （陽水）- Yang Water', '庚 geng1（陽金）- Yang Metal']
+    }
+  end
+
   def self.seasons_of
-    [
-      'Season of Biding - Dormancy',
-      'Season of Entwinement - Entanglement',
-      'Season of Attraction - Obsession',
-      'Season of Warmth - Fading',
-      'Season of Extension - Exhaustion',
-      'Season of Growth - Regression',
-      'Season of Rejuvenation - Injury',
-      'Season of Comfort - Reluctance',
-      'Season of Passion - Depletion',
-      'Season of Treasure - Trap',
-      'Season of Density - Fatality',
-      'Season of Clarity - Prudence'
-    ]
+    self.seasons_of_elements_map.keys
   end
 
   def self.number_to_ordinal(number)
