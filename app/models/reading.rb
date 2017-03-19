@@ -1,6 +1,6 @@
 class Reading < ActiveRecord::Base
   def self.significance_of_your_celestial_element_sign_text(element)
-    if element == 'Yang Water'
+    return_val = if element == 'Yang Water'
 <<-HEREDOC
 You are born with the Yang Water sign (Day Master)—the equivalent of the
 great river, vast ocean, or magnificent falls. Yang Water is particularly
@@ -135,5 +135,11 @@ HEREDOC
     else
       ''
     end
+    heredoc_to_form_field_text return_val
+  end
+
+  def self.heredoc_to_form_field_text(heredoc)
+    code = 'gklfjdg34234234poiopie'
+    heredoc.gsub("\n\n", code).gsub("\n", " ").gsub(code, "\n\n")
   end
 end
