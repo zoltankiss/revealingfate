@@ -6,8 +6,8 @@ You are born with the Yin Fire sign (Day Master)—the equivalent of the
 luminous lamplight. Yin Fire does not shine as brightly as Yang Fire gleams
 like the sun, however it does not need to; its strength lies in providing
 intimate exchange to those seeking or in need of it without being
-unintentionally invasive or abrasive. &lt;Particularly effective at…&gt; You are
-caring, relatable, empathic, and gentle &lt;joyful?&gt; at your best; indecisive,
+unintentionally invasive or abrasive. You are
+caring, relatable, empathic, and gentle at your best; indecisive,
 yielding, and vacillated when at your worst. In all instances you are intent.
 
 To foster healthy relationships, you need to value the role of internal drive
@@ -26,8 +26,7 @@ Master)—the equivalent of the blazing Sun. Yang Fire does not burn as softly
 as Yin Fire flickers like lamplight, however it does not need to; its strength lies
 in providing intimate exchange to those seeking or in need of it without being
 unintentionally soft or left wanting (originally: distant or impartial).
-&lt;Particularly effective at…&gt; You are bright, warm, nurturing, and
-&lt;illustrious—find new word&gt; when at your best; hot, dry, and invasive when
+You are bright, warm, nurturing, and when at your best; hot, dry, and invasive when
 at your worst. In all instances you are intense.
 
 To foster healthy relationships, you need to value the role of distance between
