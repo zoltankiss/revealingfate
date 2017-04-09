@@ -6,13 +6,10 @@ gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 
 
-if ENV['REVEALING_FATE_MIMIC_PROD']
-  gem 'pg'
-  gem 'rails_12factor', group: :production
-  gem 'puma'
-else
-  gem 'sqlite3'
-end
+gem 'pg'
+gem 'rails_12factor', group: :production
+gem 'puma'
+
 
 gem 'yaml_db_improved'
 
